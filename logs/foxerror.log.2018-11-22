@@ -1,0 +1,150 @@
+2018-11-22 14:08:56,552 [ERROR] com.foxhis.itf.main.Main.main(Main.java:123) - 连接数据库失败或者加载实例失败
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sms' defined in class path resource [applicationContext.xml]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'int' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:749)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:189)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1154)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1056)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:759)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at com.foxhis.itf.main.Main.main(Main.java:107)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'int' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1474)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1102)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1064)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:835)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:741)
+	... 15 more
+2018-11-22 14:09:13,105 [ERROR] com.foxhis.itf.main.Main.main(Main.java:123) - 连接数据库失败或者加载实例失败
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sms' defined in class path resource [applicationContext.xml]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'int' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:749)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:189)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1154)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1056)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:759)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at com.foxhis.itf.main.Main.main(Main.java:107)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'int' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1474)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1102)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1064)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:835)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:741)
+	... 15 more
+2018-11-22 14:34:03,809 [ERROR] com.foxhis.itf.main.Main.main(Main.java:123) - 连接数据库失败或者加载实例失败
+java.lang.Exception: 获取handler对象为空
+	at com.foxhis.itf.utils.Utils.getItfInstance(Utils.java:122)
+	at com.foxhis.itf.service.impl.DoorCardGenernal.initialize(DoorCardGenernal.java:47)
+	at com.foxhis.itf.main.Main.main(Main.java:111)
+2018-11-22 14:35:29,361 [ INFO] com.foxhis.itf.main.Main.main(Main.java:113) - 打开循环调度器成功,循环时间为:2秒
+2018-11-22 14:36:00,087 [ERROR] com.foxhis.itf.service.impl.SMSGenernal.run(SMSGenernal.java:170) - 轮询异常：
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.foxhis.itf.dao.IMessage_SendMapper.getMs_SendBySta
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:225)
+	at org.apache.ibatis.binding.MapperMethod.<init>(MapperMethod.java:48)
+	at org.apache.ibatis.binding.MapperProxy.cachedMapperMethod(MapperProxy.java:65)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:58)
+	at com.sun.proxy.$Proxy13.getMs_SendBySta(Unknown Source)
+	at com.foxhis.itf.service.impl.SMSGenernal.run(SMSGenernal.java:81)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-11-22 14:39:51,904 [ INFO] com.foxhis.itf.main.Main.main(Main.java:113) - 打开循环调度器成功,循环时间为:2秒
+2018-11-22 14:40:06,060 [ERROR] com.foxhis.itf.service.impl.SMSGenernal.run(SMSGenernal.java:170) - 轮询异常：
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.foxhis.itf.dao.IMessage_SendMapper.getMs_SendBySta
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:225)
+	at org.apache.ibatis.binding.MapperMethod.<init>(MapperMethod.java:48)
+	at org.apache.ibatis.binding.MapperProxy.cachedMapperMethod(MapperProxy.java:65)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:58)
+	at com.sun.proxy.$Proxy13.getMs_SendBySta(Unknown Source)
+	at com.foxhis.itf.service.impl.SMSGenernal.run(SMSGenernal.java:81)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-11-22 14:42:37,275 [ INFO] com.foxhis.itf.main.Main.main(Main.java:105) - 打开循环调度器成功,循环时间为:2秒
+2018-11-22 14:42:37,279 [ERROR] com.foxhis.itf.service.impl.SMSGenernal.run(SMSGenernal.java:170) - 轮询异常：
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.foxhis.itf.dao.IMessage_SendMapper.getMs_SendBySta
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:225)
+	at org.apache.ibatis.binding.MapperMethod.<init>(MapperMethod.java:48)
+	at org.apache.ibatis.binding.MapperProxy.cachedMapperMethod(MapperProxy.java:65)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:58)
+	at com.sun.proxy.$Proxy13.getMs_SendBySta(Unknown Source)
+	at com.foxhis.itf.service.impl.SMSGenernal.run(SMSGenernal.java:81)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-11-22 14:42:39,275 [ERROR] com.foxhis.itf.service.impl.SMSGenernal.run(SMSGenernal.java:170) - 轮询异常：
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.foxhis.itf.dao.IMessage_SendMapper.getMs_SendBySta
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:225)
+	at org.apache.ibatis.binding.MapperMethod.<init>(MapperMethod.java:48)
+	at org.apache.ibatis.binding.MapperProxy.cachedMapperMethod(MapperProxy.java:65)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:58)
+	at com.sun.proxy.$Proxy13.getMs_SendBySta(Unknown Source)
+	at com.foxhis.itf.service.impl.SMSGenernal.run(SMSGenernal.java:81)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-11-22 14:42:41,274 [ERROR] com.foxhis.itf.service.impl.SMSGenernal.run(SMSGenernal.java:170) - 轮询异常：
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.foxhis.itf.dao.IMessage_SendMapper.getMs_SendBySta
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:225)
+	at org.apache.ibatis.binding.MapperMethod.<init>(MapperMethod.java:48)
+	at org.apache.ibatis.binding.MapperProxy.cachedMapperMethod(MapperProxy.java:65)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:58)
+	at com.sun.proxy.$Proxy13.getMs_SendBySta(Unknown Source)
+	at com.foxhis.itf.service.impl.SMSGenernal.run(SMSGenernal.java:81)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-11-22 14:48:28,227 [ERROR] com.foxhis.itf.service.impl.VODGenernal.run(VODGenernal.java:59) - 轮询异常：org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.foxhis.itf.dao.IVod_GrdMapper.getVodByChanged
+2018-11-22 14:48:28,923 [ INFO] com.foxhis.itf.main.Main.main(Main.java:105) - 打开循环调度器成功,循环时间为:2秒
+2018-11-22 14:48:30,217 [ERROR] com.foxhis.itf.service.impl.VODGenernal.run(VODGenernal.java:59) - 轮询异常：org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.foxhis.itf.dao.IVod_GrdMapper.getVodByChanged
+2018-11-22 14:48:32,218 [ERROR] com.foxhis.itf.service.impl.VODGenernal.run(VODGenernal.java:59) - 轮询异常：org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.foxhis.itf.dao.IVod_GrdMapper.getVodByChanged
+2018-11-22 14:48:34,218 [ERROR] com.foxhis.itf.service.impl.VODGenernal.run(VODGenernal.java:59) - 轮询异常：org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.foxhis.itf.dao.IVod_GrdMapper.getVodByChanged
+2018-11-22 14:48:36,217 [ERROR] com.foxhis.itf.service.impl.VODGenernal.run(VODGenernal.java:59) - 轮询异常：org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.foxhis.itf.dao.IVod_GrdMapper.getVodByChanged
+2018-11-22 15:37:57,723 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:2秒
+2018-11-22 15:37:57,725 [ERROR] com.foxhis.itf.service.impl.VODGenernal.run(VODGenernal.java:59) - 轮询异常：org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.foxhis.itf.dao.IVod_GrdMapper.getVodByChanged
+2018-11-22 15:37:59,726 [ERROR] com.foxhis.itf.service.impl.VODGenernal.run(VODGenernal.java:59) - 轮询异常：org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.foxhis.itf.dao.IVod_GrdMapper.getVodByChanged
+2018-11-22 16:31:19,061 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:2秒
+2018-11-22 16:31:19,065 [ERROR] com.foxhis.itf.service.impl.VODGenernal.run(VODGenernal.java:59) - 轮询异常：org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.foxhis.itf.dao.IVod_GrdMapper.getVodByChanged
+2018-11-22 16:31:21,060 [ERROR] com.foxhis.itf.service.impl.VODGenernal.run(VODGenernal.java:59) - 轮询异常：org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.foxhis.itf.dao.IVod_GrdMapper.getVodByChanged
+2018-11-22 16:31:52,008 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:2秒
+2018-11-22 16:31:52,010 [ERROR] com.foxhis.itf.service.impl.VODGenernal.run(VODGenernal.java:59) - 轮询异常：org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.foxhis.itf.dao.IVod_GrdMapper.getVodByChanged
+2018-11-22 16:32:38,624 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:2秒
+2018-11-22 16:32:38,626 [ERROR] com.foxhis.itf.service.impl.VODGenernal.run(VODGenernal.java:59) - 轮询异常：org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.foxhis.itf.dao.IVod_GrdMapper.getVodByChanged
+2018-11-22 16:32:40,624 [ERROR] com.foxhis.itf.service.impl.VODGenernal.run(VODGenernal.java:59) - 轮询异常：org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.foxhis.itf.dao.IVod_GrdMapper.getVodByChanged

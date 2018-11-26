@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration  PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+"https://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- 这是根标签 ,必须按照顺序来，properties，settings，typeAliases-->
+<configuration>
+	<!-- 元素允许在主配置文件之外提供一个properties格式对应文件，从而使得主配置文件更加通用。这样对部署非常有用 
+	  如果需要在包外配置数据库参数，则，properties可以不用配置，直接在sqlSessionFactory.build(inputStream,properties)，中的properties生成
+	<properties resource="dbsybase.properties" />-->
+	<!-- 设置别名，一定要放在properties下面  
+	
+	<settings>
+		<setting name="defaultStatementTimeout" value="${timeout}" />
+	</settings>
+	-->
+	<typeAliases><!-- 别名的扫描包，entity包下面的数据以类为别名 -->
+		 <package name="com.foxhis.itf.entity"/>
+	</typeAliases>
+
+
+</configuration>

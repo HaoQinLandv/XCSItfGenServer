@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.foxhis.itf.dao.IDoorCard_ReqMapper">
+
+	<resultMap id="DoorCard_ReqMap" type="com.foxhis.itf.entity.DoorCard_Req">
+		<id column="id" property="id" />
+		<result column="roomno" property="roomno" />
+		<result column="name" property="name" />
+		<result column="arr" property="arr" />
+		<result column="dep" property="dep" />
+		<result column="card_type" property="card_type" />
+		<result column="encoder" property="encoder" />
+		<result column="pc_id" property="pc_id" />
+		<result column="cardno1" property="cardno1" />
+		<result column="cardno2" property="cardno2" />
+		<result column="flag1" property="flag1" />
+		<result column="flag2" property="flag2" />
+		<result column="flag3" property="flag3" />
+		<result column="flag4" property="flag4" />
+		<result column="remark" property="remark" />
+
+	</resultMap>
+
+
+	<select id="getDoorCard_ReqBySta" resultMap="DoorCard_ReqMap"
+		timeout="5">
+		select
+		id,
+		roomno,
+		name,
+		arr,
+		dep,
+		card_type,
+		encoder,
+		pc_id,
+		cardno1,
+		cardno2,
+		flag1,flag2,flag3,flag4,remark 
+		from doorcard_req where sta = #{sta} and pc_id = #{pc_id}
+	</select>
+
+	<update id="updateWriteData" parameterType="DoorCard_Req"
+		timeout="5">
+		update doorcard_req set remark=#{remark},sta=#{sta} where
+		id=#{id}
+	</update>
+
+	<update id="updateReadData" parameterType="DoorCard_Req"
+		timeout="5">
+		update doorcard_req set
+		remark=#{remark},sta=#{sta},arr=#{arr},dep=#{dep},flag4=#{flag4} where
+		id=#{id}
+	</update>
+
+	<update id="updateEraseData" parameterType="DoorCard_Req"
+		timeout="5">
+		update doorcard_req set remark=#{remark},sta=#{sta} where
+		id=#{id}
+	</update>
+
+
+</mapper>

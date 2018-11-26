@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.foxhis.itf.dao.IVod_GrdMapper">
+
+	<resultMap type="Vod_Grd" id="resultVodGrd">
+		<id column="roomno" property="roomno" />
+		<result column="changed" property="changed" />
+		<result column="ograde" property="ograde" />
+		<result column="grade" property="grade" />
+		<result column="obox_addr" property="obox_addr" />
+		<result column="box_addr" property="box_addr" />
+		<result column="gst_grd" property="gst_grd" />
+		<result column="gst_name" property="gst_name" />
+		<result column="empno" property="empno" />
+		<result column="shift" property="shift" />
+		<result column="date" property="date" />
+	</resultMap>
+
+	<select id="getVodByChanged" resultMap="resultVodGrd" timeout="5">
+		select * from vod_grd where changed = 'T'
+	</select>
+
+	<update id="updateVodChanged" parameterType="String" timeout="5">
+		update vod_grd set changed=#{changed} where roomno=#{roomno}
+	</update>
+</mapper>

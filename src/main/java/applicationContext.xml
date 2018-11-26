@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+    <!-- 自动组件，类必须有组件注解，来产生bean -->
+    <context:component-scan base-package="com.foxhis.itf"/> 
+    
+     <!-- 引入配置文件 -->
+    <bean id="propertyConfigurer"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="file:#{systemProperties['user.dir']}/system.properties"/>
+    </bean>
+    
+    <!-- 配置数据源，也可以采用c3p0 -->
+    <bean id="dataSource"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="${driver}"/>
+        <property name="url" value="${url}"/>
+        <!-- 改为你的地址即可 -->
+        <property name="username" value="${username}"/>
+        <property name="password" value="${password}"/>
+    </bean>
+    <!--  此处因为上面定义了自动扫描包产生bean，注解service（value）就可以直接定位到具体的bean
+    <bean id="doorcard" class = "com.foxhis.itf.service.impl.DoorCardGenernal">
+    </bean>
+    <bean id="sms" class = "com.foxhis.itf.service.impl.SMSGenernal">
+       <property name = "length" value="${length}">
+       </property>
+    </bean>
+    <bean id="police" class = "com.foxhis.itf.service.impl.PoliceGenernal">
+    </bean>
+    <bean id="vod" class = "com.foxhis.itf.service.impl.VODGenernal">
+    </bean>
+    <bean id="ctrlroom" class = "com.foxhis.itf.service.impl.CtrlRoomGenernal">
+    </bean>
+    -->
+    <!--【核心部分】 配置MyBatis的sqlSessionFactory -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!-- 配置数据源 dataSource-->
+        <property name="dataSource" ref="dataSource"/>
+        <!-- 自动扫描mappers.xml文件 mapperLocations -->
+        <property name="mapperLocations" value="classpath*:com/**/mappers/*.xml"></property>
+        <!-- MyBatis配置文件 configLocation -->
+        <property name="configLocation" value="classpath:mybatis-config.xml"></property>
+    </bean>
+
+    <!-- DAO(Data Access Object)接口注入所在包名，Spring会自动查找其下的接口，并在@resource注解中自动注入其接口引用 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.foxhis.itf.dao"/>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
+    </bean>
+
+    <!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->
+    <bean id="transactionManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+</beans>
