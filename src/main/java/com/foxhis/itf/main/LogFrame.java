@@ -23,7 +23,10 @@ public class LogFrame {
 
     private JScrollPane logScrollPane;  
     private JTextArea logTextArea;  
-    public LogReader rthread ;
+    public  LogReader logReader ;
+
+    
+    private static final File logFile = new File(System.getProperty("user.dir")+"\\logs\\foxerror.log");
     
 	  /**
      * 主窗口大小
@@ -52,7 +55,15 @@ public class LogFrame {
 	public LogFrame() {
 		// TODO Auto-generated constructor stub
 		initialze();
-		//initLog();
+		initLog();
+	}
+	
+	public void dispose()
+	{
+		if(frame!=null)
+			frame.dispose();
+		if(logReader!=null)
+			logReader.setFlg(false);
 	}
 	
 	public void initialze()
@@ -118,7 +129,7 @@ public class LogFrame {
 			@Override
 			public void windowClosing(WindowEvent e) {
 				// TODO Auto-generated method stub
-				rthread.setFlg(false);
+				logReader.setFlg(false);
 			}
 			
 			@Override
@@ -139,14 +150,43 @@ public class LogFrame {
 	
 	public void initLog()
 	{
-		 File logFile = new File(System.getProperty("user.dir")+"\\logs\\foxerror.log");
-		 rthread = new LogReader(logFile);
-		 rthread.setFlg(true);
-	     rthread.start();
+		RandomAccessFile randomFile=null;
+		long lastTimeFileSize = 0; // 初始文件大小
+		try {
+			randomFile = new RandomAccessFile(logFile, "r");
+			randomFile.seek(lastTimeFileSize);
+			String tmp = null;
 
+			while ((tmp = randomFile.readLine()) != null) {
+				logTextArea.append(new String(tmp.getBytes("iso-8859-1"), "utf-8"));
+				logTextArea.append("\n");
+			}
+		lastTimeFileSize = randomFile.length();//读到最后的大小
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				randomFile.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		logReader = new LogReader(logFile,lastTimeFileSize);
+		if(!logReader.isFlg())
+			logReader.setFlg(true);
 	}
 	
-	class LogReader extends Thread{
+	public void startLogThread()
+	{
+		Thread logThread = new Thread(logReader);
+		logThread.start();
+	}
+	
+	class LogReader implements Runnable{
 
 		private File logFile = null;
 		private volatile boolean flg;
@@ -161,9 +201,9 @@ public class LogFrame {
 
 		private long lastTimeFileSize = 0; // 上次文件大小
 
-	    public LogReader(File logFile) {
+	    public LogReader(File logFile,long lasttimefilesize) {
 	        this.logFile = logFile;
-	        //lastTimeFileSize = logFile.length();
+	        this.lastTimeFileSize = lasttimefilesize;
 	    }
 
 		@Override

@@ -45,7 +45,7 @@
 			<artifactId>ItfHandlerUtils</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-
+        <!--  
 		<dependency>
 			<groupId>com.foxhis.itf</groupId>
 			<artifactId>PoliceJinCheng</artifactId>
@@ -56,6 +56,8 @@
 			<artifactId>VOD_LeShi</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		
+		-->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
@@ -107,6 +109,26 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
+			<plugin>
+			    <!-- 将依赖的包拷贝到target\lib -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                            <overWriteReleases>false</overWriteReleases>
+                            <overWriteSnapshots>false</overWriteSnapshots>
+                            <overWriteIfNewer>true</overWriteIfNewer>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
 		</plugins>
 		<finalName>XCSItfGenernal</finalName>
 	</build>

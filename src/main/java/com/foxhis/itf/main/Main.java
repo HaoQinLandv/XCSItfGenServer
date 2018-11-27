@@ -46,7 +46,7 @@ public class Main {
 	//定义定时任务
 	private static ScheduledExecutorService  scheduledpools;
 	//private static SqlSessionFactory sqlSessionFactory ;
-	private static LogDialog logDemoFrame;
+	//private static LogDialog logDemoFrame;
 	private static LogFrame logFrame;
 	private static final String SEVNAME = "门锁";
 	private static String handler;
@@ -112,7 +112,8 @@ public class Main {
 		/*logDemoFrame = new LogDialog();  
 		logDemoFrame.initLog();  */
 		logFrame = new LogFrame();
-		logFrame.initLog();
+		//logFrame.startLogThread();
+		//logFrame.initLog();
 		//logFrame.frame.setVisible(true);
 		
         //加上系统托盘
@@ -144,14 +145,13 @@ public class Main {
 		logItem.setLabel("日志");
 		logItem.addActionListener(new ActionListener() {		
 			public void actionPerformed(ActionEvent e) {
-
-//				logDemoFrame.setVisible(true); 
-				logFrame.frame.setVisible(true);
-				if(!logFrame.rthread.isFlg())
+				
+				if(!logFrame.logReader.isFlg())
 				{
-					logFrame.rthread.setFlg(true);
-					logFrame.rthread.start();
+					logFrame.logReader.setFlg(true);
+					logFrame.startLogThread();
 				}
+				logFrame.frame.setVisible(true);
 				
 			}
 		});
@@ -201,7 +201,8 @@ public class Main {
 				//to do 关闭数据库
 				if(scheduledpools!=null && !scheduledpools.isShutdown())
 					scheduledpools.shutdown();
-				logDemoFrame.dispose();
+				if(logFrame!=null) 
+					 logFrame.dispose();
 				LOGGER.info("服务已正常退出..");
 				System.exit(0);
 			}
