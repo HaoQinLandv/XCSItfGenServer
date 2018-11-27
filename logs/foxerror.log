@@ -1,127 +1,114 @@
-2018-11-26 10:25:51,245 [ERROR] com.foxhis.itf.main.Main.main(Main.java:110) - 连接数据库失败或者加载实例失败
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'SMSGenernal' defined in file [C:\Users\tq\workspace\XCSItfGenServer\target\classes\com\foxhis\itf\service\impl\SMSGenernal.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'int' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:749)
-	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:189)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1154)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1056)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
-	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:759)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
-	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
-	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
-	at com.foxhis.itf.main.Main.main(Main.java:94)
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'int' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1474)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1102)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1064)
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:835)
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:741)
-	... 15 more
-2018-11-26 10:28:33,699 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:2秒
-2018-11-26 10:29:55,928 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:2秒
-2018-11-26 10:35:06,253 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:2秒
-2018-11-26 10:59:16,417 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:2秒
-2018-11-26 11:10:42,691 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:2秒
-2018-11-26 11:11:49,071 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:2秒
-2018-11-26 11:11:49,493 [ERROR] com.foxhis.itf.service.impl.VODGenernal.run(VODGenernal.java:58) - 轮询异常：java.lang.AbstractMethodError: org.mybatis.spring.transaction.SpringManagedTransaction.getTimeout()Ljava/lang/Integer;
-2018-11-26 11:11:51,223 [ERROR] com.foxhis.itf.service.impl.VODGenernal.run(VODGenernal.java:58) - 轮询异常：java.lang.AbstractMethodError: org.mybatis.spring.transaction.SpringManagedTransaction.getTimeout()Ljava/lang/Integer;
-2018-11-26 11:14:26,862 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:2秒
-2018-11-26 11:14:27,308 [ INFO] com.foxhis.itf.service.impl.VODGenernal.doTask(VODGenernal.java:87) - 获取的vodgrd记录：{date=Thu Oct 18 09:43:40 CST 2018, box_addr=F18B230001, ograde=0, roomno=0402 , obox_addr=1, gst_name=PMS, grade=0, shift=1, logmark=1, empno=PMS       , gst_grd=1, changed=T}
-2018-11-26 11:14:27,309 [ERROR] com.foxhis.itf.service.impl.VODGenernal.run(VODGenernal.java:58) - 轮询异常：java.lang.NullPointerException
-2018-11-26 11:14:29,006 [ INFO] com.foxhis.itf.service.impl.VODGenernal.doTask(VODGenernal.java:87) - 获取的vodgrd记录：{date=Thu Oct 18 09:43:40 CST 2018, box_addr=F18B230001, ograde=0, roomno=0402 , obox_addr=1, gst_name=PMS, grade=0, shift=1, logmark=1, empno=PMS       , gst_grd=1, changed=T}
-2018-11-26 11:14:29,006 [ERROR] com.foxhis.itf.service.impl.VODGenernal.run(VODGenernal.java:58) - 轮询异常：java.lang.NullPointerException
-2018-11-26 11:15:05,305 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:2秒
-2018-11-26 11:15:28,698 [ INFO] com.foxhis.itf.service.impl.VODGenernal.doTask(VODGenernal.java:87) - 获取的vodgrd记录：{date=Thu Oct 18 09:43:40 CST 2018, box_addr=F18B230001, ograde=0, roomno=0402 , obox_addr=1, gst_name=PMS, grade=0, shift=1, logmark=1, empno=PMS       , gst_grd=1, changed=T}
-2018-11-26 11:17:48,950 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:2秒
-2018-11-26 11:17:49,292 [ INFO] com.foxhis.itf.service.impl.VODGenernal.doTask(VODGenernal.java:87) - 获取的vodgrd记录：{date=Thu Oct 18 09:43:40 CST 2018, box_addr=F18B230001, ograde=0, roomno=0402 , obox_addr=1, gst_name=PMS, grade=0, shift=1, logmark=1, empno=PMS       , gst_grd=1, changed=T}
-2018-11-26 11:17:49,293 [ERROR] com.foxhis.itf.service.impl.VODGenernal.run(VODGenernal.java:58) - 轮询异常：java.lang.NullPointerException
-2018-11-26 11:17:51,036 [ INFO] com.foxhis.itf.service.impl.VODGenernal.doTask(VODGenernal.java:87) - 获取的vodgrd记录：{date=Thu Oct 18 09:43:40 CST 2018, box_addr=F18B230001, ograde=0, roomno=0402 , obox_addr=1, gst_name=PMS, grade=0, shift=1, logmark=1, empno=PMS       , gst_grd=1, changed=T}
-2018-11-26 11:17:51,036 [ERROR] com.foxhis.itf.service.impl.VODGenernal.run(VODGenernal.java:58) - 轮询异常：java.lang.NullPointerException
-2018-11-26 11:19:36,840 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:2秒
-2018-11-26 11:19:37,592 [ INFO] com.foxhis.itf.service.impl.VODGenernal.doTask(VODGenernal.java:87) - 获取的vodgrd记录：{date=Thu Oct 18 09:43:40 CST 2018, box_addr=F18B230001, ograde=0, roomno=0402 , obox_addr=1, gst_name=PMS, grade=0, shift=1, logmark=1, empno=PMS       , gst_grd=1, changed=T}
-2018-11-26 11:19:37,593 [ERROR] com.foxhis.itf.service.impl.VODGenernal.run(VODGenernal.java:58) - 轮询异常：java.lang.NullPointerException
-2018-11-26 11:19:38,875 [ INFO] com.foxhis.itf.service.impl.VODGenernal.doTask(VODGenernal.java:87) - 获取的vodgrd记录：{date=Thu Oct 18 09:43:40 CST 2018, box_addr=F18B230001, ograde=0, roomno=0402 , obox_addr=1, gst_name=PMS, grade=0, shift=1, logmark=1, empno=PMS       , gst_grd=1, changed=T}
-2018-11-26 11:19:38,876 [ERROR] com.foxhis.itf.service.impl.VODGenernal.run(VODGenernal.java:58) - 轮询异常：java.lang.NullPointerException
-2018-11-26 11:26:16,711 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:2秒
-2018-11-26 11:26:17,068 [ INFO] com.foxhis.itf.service.impl.VODGenernal.doTask(VODGenernal.java:87) - 获取的vodgrd记录：{date=Thu Oct 18 09:43:40 CST 2018, box_addr=F18B230001, ograde=0, roomno=0402 , obox_addr=1, gst_name=PMS, grade=0, shift=1, logmark=1, empno=PMS       , gst_grd=1, changed=T}
-2018-11-26 11:26:17,069 [ERROR] com.foxhis.itf.service.impl.VODGenernal.run(VODGenernal.java:58) - 轮询异常：java.lang.NullPointerException
-2018-11-26 11:26:18,830 [ INFO] com.foxhis.itf.service.impl.VODGenernal.doTask(VODGenernal.java:87) - 获取的vodgrd记录：{date=Thu Oct 18 09:43:40 CST 2018, box_addr=F18B230001, ograde=0, roomno=0402 , obox_addr=1, gst_name=PMS, grade=0, shift=1, logmark=1, empno=PMS       , gst_grd=1, changed=T}
-2018-11-26 11:26:18,830 [ERROR] com.foxhis.itf.service.impl.VODGenernal.run(VODGenernal.java:58) - 轮询异常：java.lang.NullPointerException
-2018-11-26 11:27:05,838 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:2秒
-2018-11-26 11:27:06,131 [ INFO] com.foxhis.itf.service.impl.VODGenernal.doTask(VODGenernal.java:87) - 获取的vodgrd记录：{date=Thu Oct 18 09:43:40 CST 2018, box_addr=F18B230001, ograde=0, roomno=0402 , obox_addr=1, gst_name=PMS, grade=0, shift=1, logmark=1, empno=PMS       , gst_grd=1, changed=T}
-2018-11-26 11:27:06,133 [ERROR] com.foxhis.itf.service.impl.VODGenernal.run(VODGenernal.java:58) - 轮询异常：java.lang.NullPointerException
-2018-11-26 11:27:07,893 [ INFO] com.foxhis.itf.service.impl.VODGenernal.doTask(VODGenernal.java:87) - 获取的vodgrd记录：{date=Thu Oct 18 09:43:40 CST 2018, box_addr=F18B230001, ograde=0, roomno=0402 , obox_addr=1, gst_name=PMS, grade=0, shift=1, logmark=1, empno=PMS       , gst_grd=1, changed=T}
-2018-11-26 11:27:07,894 [ERROR] com.foxhis.itf.service.impl.VODGenernal.run(VODGenernal.java:58) - 轮询异常：java.lang.NullPointerException
-2018-11-26 11:29:31,822 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:2秒
-2018-11-26 11:29:39,444 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
-2018-11-26 11:29:46,180 [ERROR] com.foxhis.itf.service.impl.DoorCardGenernal.run(DoorCardGenernal.java:195) - 轮询异常：org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.foxhis.itf.dao.IDoorCard_ReqMapper.getDoorCard_ReqBySta
-2018-11-26 11:33:05,418 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:2秒
-2018-11-26 11:33:05,439 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
-2018-11-26 11:33:05,442 [ERROR] com.foxhis.itf.service.impl.DoorCardGenernal.run(DoorCardGenernal.java:195) - 轮询异常：org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.foxhis.itf.dao.IDoorCard_ReqMapper.getDoorCard_ReqBySta
-2018-11-26 11:33:07,417 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
-2018-11-26 11:33:07,418 [ERROR] com.foxhis.itf.service.impl.DoorCardGenernal.run(DoorCardGenernal.java:195) - 轮询异常：org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.foxhis.itf.dao.IDoorCard_ReqMapper.getDoorCard_ReqBySta
-2018-11-26 11:42:24,688 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:2秒
-2018-11-26 11:42:24,710 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
-2018-11-26 11:42:24,715 [ERROR] com.foxhis.itf.service.impl.DoorCardGenernal.run(DoorCardGenernal.java:195) - 轮询异常：org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.foxhis.itf.dao.IDoorCard_ReqMapper.getDoorCard_ReqBySta
-2018-11-26 11:42:26,687 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
-2018-11-26 11:42:26,688 [ERROR] com.foxhis.itf.service.impl.DoorCardGenernal.run(DoorCardGenernal.java:195) - 轮询异常：org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.foxhis.itf.dao.IDoorCard_ReqMapper.getDoorCard_ReqBySta
-2018-11-26 11:42:28,688 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
-2018-11-26 11:42:28,689 [ERROR] com.foxhis.itf.service.impl.DoorCardGenernal.run(DoorCardGenernal.java:195) - 轮询异常：org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.foxhis.itf.dao.IDoorCard_ReqMapper.getDoorCard_ReqBySta
-2018-11-26 11:43:28,185 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:2秒
-2018-11-26 11:43:28,205 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
-2018-11-26 11:43:28,208 [ERROR] com.foxhis.itf.service.impl.DoorCardGenernal.run(DoorCardGenernal.java:195) - 轮询异常：org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.foxhis.itf.dao.IDoorCard_ReqMapper.getDoorCard_ReqBySta
-2018-11-26 11:43:30,186 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
-2018-11-26 11:43:30,187 [ERROR] com.foxhis.itf.service.impl.DoorCardGenernal.run(DoorCardGenernal.java:195) - 轮询异常：org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.foxhis.itf.dao.IDoorCard_ReqMapper.getDoorCard_ReqBySta
-2018-11-26 11:43:32,186 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
-2018-11-26 11:43:32,187 [ERROR] com.foxhis.itf.service.impl.DoorCardGenernal.run(DoorCardGenernal.java:195) - 轮询异常：org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.foxhis.itf.dao.IDoorCard_ReqMapper.getDoorCard_ReqBySta
-2018-11-26 11:46:04,655 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:2秒
-2018-11-26 11:46:04,981 [ INFO] com.foxhis.itf.service.impl.VODGenernal.doTask(VODGenernal.java:87) - 获取的vodgrd记录：{date=Thu Oct 18 09:43:40 CST 2018, box_addr=F18B230001, ograde=0, roomno=0402 , obox_addr=1, gst_name=PMS, grade=0, shift=1, logmark=1, empno=PMS       , gst_grd=1, changed=T}
-2018-11-26 11:46:04,982 [ERROR] com.foxhis.itf.service.impl.VODGenernal.run(VODGenernal.java:58) - 轮询异常：java.lang.NullPointerException
-2018-11-26 11:46:06,679 [ INFO] com.foxhis.itf.service.impl.VODGenernal.doTask(VODGenernal.java:87) - 获取的vodgrd记录：{date=Thu Oct 18 09:43:40 CST 2018, box_addr=F18B230001, ograde=0, roomno=0402 , obox_addr=1, gst_name=PMS, grade=0, shift=1, logmark=1, empno=PMS       , gst_grd=1, changed=T}
-2018-11-26 11:46:06,680 [ERROR] com.foxhis.itf.service.impl.VODGenernal.run(VODGenernal.java:58) - 轮询异常：java.lang.NullPointerException
-2018-11-26 11:47:28,827 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:2秒
-2018-11-26 11:47:28,847 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
-2018-11-26 11:47:28,885 [ERROR] com.foxhis.itf.service.impl.DoorCardGenernal.run(DoorCardGenernal.java:195) - 轮询异常：org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter '0' not found. Available parameters are [arg1, arg0, param1, param2]
-2018-11-26 11:47:30,829 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
-2018-11-26 11:47:30,829 [ERROR] com.foxhis.itf.service.impl.DoorCardGenernal.run(DoorCardGenernal.java:195) - 轮询异常：org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter '0' not found. Available parameters are [arg1, arg0, param1, param2]
-2018-11-26 11:47:32,826 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
-2018-11-26 11:47:32,827 [ERROR] com.foxhis.itf.service.impl.DoorCardGenernal.run(DoorCardGenernal.java:195) - 轮询异常：org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter '0' not found. Available parameters are [arg1, arg0, param1, param2]
-2018-11-26 11:49:18,324 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:2秒
-2018-11-26 11:49:18,347 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
-2018-11-26 11:49:18,389 [ERROR] com.foxhis.itf.service.impl.DoorCardGenernal.run(DoorCardGenernal.java:195) - 轮询异常：org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'sta' not found. Available parameters are [arg1, arg0, param1, param2]
-2018-11-26 11:49:20,323 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
-2018-11-26 11:49:20,325 [ERROR] com.foxhis.itf.service.impl.DoorCardGenernal.run(DoorCardGenernal.java:195) - 轮询异常：org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'sta' not found. Available parameters are [arg1, arg0, param1, param2]
-2018-11-26 11:49:22,324 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
-2018-11-26 11:49:22,325 [ERROR] com.foxhis.itf.service.impl.DoorCardGenernal.run(DoorCardGenernal.java:195) - 轮询异常：org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'sta' not found. Available parameters are [arg1, arg0, param1, param2]
-2018-11-26 11:52:26,623 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:2秒
-2018-11-26 11:52:26,643 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
-2018-11-26 11:52:26,671 [ERROR] com.foxhis.itf.service.impl.DoorCardGenernal.run(DoorCardGenernal.java:195) - 轮询异常：org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter '0' not found. Available parameters are [arg1, arg0, param1, param2]
-2018-11-26 11:52:28,621 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
-2018-11-26 11:52:28,622 [ERROR] com.foxhis.itf.service.impl.DoorCardGenernal.run(DoorCardGenernal.java:195) - 轮询异常：org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter '0' not found. Available parameters are [arg1, arg0, param1, param2]
-2018-11-26 11:53:09,213 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:2秒
-2018-11-26 11:53:09,235 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
-2018-11-26 11:53:09,265 [ERROR] com.foxhis.itf.service.impl.DoorCardGenernal.run(DoorCardGenernal.java:195) - 轮询异常：org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter '0' not found. Available parameters are [arg1, arg0, param1, param2]
-2018-11-26 11:53:11,212 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
-2018-11-26 11:53:11,213 [ERROR] com.foxhis.itf.service.impl.DoorCardGenernal.run(DoorCardGenernal.java:195) - 轮询异常：org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter '0' not found. Available parameters are [arg1, arg0, param1, param2]
-2018-11-26 11:53:13,213 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
-2018-11-26 11:53:13,214 [ERROR] com.foxhis.itf.service.impl.DoorCardGenernal.run(DoorCardGenernal.java:195) - 轮询异常：org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter '0' not found. Available parameters are [arg1, arg0, param1, param2]
-2018-11-26 11:53:15,213 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
-2018-11-26 11:53:15,214 [ERROR] com.foxhis.itf.service.impl.DoorCardGenernal.run(DoorCardGenernal.java:195) - 轮询异常：org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter '0' not found. Available parameters are [arg1, arg0, param1, param2]
-2018-11-26 11:54:44,483 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:2秒
-2018-11-26 11:54:44,504 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
-2018-11-26 11:54:44,540 [ERROR] com.foxhis.itf.service.impl.DoorCardGenernal.run(DoorCardGenernal.java:195) - 轮询异常：org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter '0' not found. Available parameters are [sta, param1, pc_id, param2]
-2018-11-26 11:54:46,483 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
-2018-11-26 11:54:46,486 [ERROR] com.foxhis.itf.service.impl.DoorCardGenernal.run(DoorCardGenernal.java:195) - 轮询异常：org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter '0' not found. Available parameters are [sta, param1, pc_id, param2]
-2018-11-26 11:54:48,483 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
-2018-11-26 11:54:48,484 [ERROR] com.foxhis.itf.service.impl.DoorCardGenernal.run(DoorCardGenernal.java:195) - 轮询异常：org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter '0' not found. Available parameters are [sta, param1, pc_id, param2]
-2018-11-26 13:15:48,802 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:2秒
-2018-11-26 13:15:48,834 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
-2018-11-26 13:15:50,801 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
-2018-11-26 13:15:52,798 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
-2018-11-26 13:15:54,800 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
+2018-11-27 10:10:45,607 [ERROR] com.foxhis.itf.main.Main.main(Main.java:110) - 连接数据库失败或者加载实例失败
+java.lang.Exception: 获取handler对象为空
+	at com.foxhis.itf.utils.Utils.getItfInstance(Utils.java:122)
+	at com.foxhis.itf.service.impl.SMSGenernal.initialize(SMSGenernal.java:51)
+	at com.foxhis.itf.main.Main.main(Main.java:98)
+2018-11-27 10:13:00,949 [ERROR] com.foxhis.itf.main.Main.main(Main.java:110) - 连接数据库失败或者加载实例失败
+java.lang.Exception: 获取handler对象为空
+	at com.foxhis.itf.utils.Utils.getItfInstance(Utils.java:122)
+	at com.foxhis.itf.service.impl.SMSGenernal.initialize(SMSGenernal.java:51)
+	at com.foxhis.itf.main.Main.main(Main.java:98)
+2018-11-27 10:13:04,710 [ INFO] com.foxhis.itf.main.Main$6.actionPerformed(Main.java:205) - 服务已正常退出..
+2018-11-27 10:30:10,855 [ERROR] com.foxhis.itf.main.Main.main(Main.java:110) - 连接数据库失败或者加载实例失败
+java.lang.Exception: 获取handler对象为空
+	at com.foxhis.itf.utils.Utils.getItfInstance(Utils.java:122)
+	at com.foxhis.itf.service.impl.SMSGenernal.initialize(SMSGenernal.java:51)
+	at com.foxhis.itf.main.Main.main(Main.java:98)
+2018-11-27 10:30:42,720 [ERROR] com.foxhis.itf.main.Main.main(Main.java:110) - 连接数据库失败或者加载实例失败
+java.lang.Exception: 获取handler对象为空
+	at com.foxhis.itf.utils.Utils.getItfInstance(Utils.java:122)
+	at com.foxhis.itf.service.impl.SMSGenernal.initialize(SMSGenernal.java:51)
+	at com.foxhis.itf.main.Main.main(Main.java:98)
+2018-11-27 10:34:08,507 [ERROR] com.foxhis.itf.main.Main.main(Main.java:110) - 连接数据库失败或者加载实例失败
+java.lang.Exception: 获取handler对象为空
+	at com.foxhis.itf.utils.Utils.getItfInstance(Utils.java:122)
+	at com.foxhis.itf.service.impl.SMSGenernal.initialize(SMSGenernal.java:51)
+	at com.foxhis.itf.main.Main.main(Main.java:98)
+2018-11-27 10:34:48,020 [ERROR] com.foxhis.itf.main.Main.main(Main.java:110) - 连接数据库失败或者加载实例失败
+java.lang.Exception: 获取handler对象为空
+	at com.foxhis.itf.utils.Utils.getItfInstance(Utils.java:122)
+	at com.foxhis.itf.service.impl.SMSGenernal.initialize(SMSGenernal.java:51)
+	at com.foxhis.itf.main.Main.main(Main.java:98)
+2018-11-27 10:45:38,877 [ERROR] com.foxhis.itf.main.Main.main(Main.java:110) - 连接数据库失败或者加载实例失败
+java.lang.Exception: 获取handler对象为空
+	at com.foxhis.itf.utils.Utils.getItfInstance(Utils.java:122)
+	at com.foxhis.itf.service.impl.SMSGenernal.initialize(SMSGenernal.java:51)
+	at com.foxhis.itf.main.Main.main(Main.java:98)
+2018-11-27 11:06:02,027 [ERROR] com.foxhis.itf.main.Main.main(Main.java:110) - 连接数据库失败或者加载实例失败
+java.lang.Exception: 获取handler对象为空
+	at com.foxhis.itf.utils.Utils.getItfInstance(Utils.java:122)
+	at com.foxhis.itf.service.impl.SMSGenernal.initialize(SMSGenernal.java:51)
+	at com.foxhis.itf.main.Main.main(Main.java:98)
+	wodetian
+	我的天
+	
+	
+	哈哈
+	
+	
+2018-11-27 11:34:55,905 [ERROR] com.foxhis.itf.main.Main.main(Main.java:110) - 连接数据库失败或者加载实例失败
+java.lang.Exception: 获取handler对象为空
+	at com.foxhis.itf.utils.Utils.getItfInstance(Utils.java:122)
+	at com.foxhis.itf.service.impl.SMSGenernal.initialize(SMSGenernal.java:51)
+	at com.foxhis.itf.main.Main.main(Main.java:98)
+2018-11-27 11:35:34,702 [ INFO] com.foxhis.itf.main.Main$6.actionPerformed(Main.java:205) - 服务已正常退出..
+2018-11-27 11:36:14,326 [ERROR] com.foxhis.itf.main.Main.main(Main.java:110) - 连接数据库失败或者加载实例失败
+java.lang.Exception: 获取handler对象为空
+	at com.foxhis.itf.utils.Utils.getItfInstance(Utils.java:122)
+	at com.foxhis.itf.service.impl.SMSGenernal.initialize(SMSGenernal.java:51)
+	at com.foxhis.itf.main.Main.main(Main.java:98)
+2018-11-27 11:38:42,599 [ERROR] com.foxhis.itf.main.Main.main(Main.java:110) - 连接数据库失败或者加载实例失败
+java.lang.Exception: 获取handler对象为空
+	at com.foxhis.itf.utils.Utils.getItfInstance(Utils.java:122)
+	at com.foxhis.itf.service.impl.SMSGenernal.initialize(SMSGenernal.java:51)
+	at com.foxhis.itf.main.Main.main(Main.java:98)
+2018-11-27 11:42:49,204 [ERROR] com.foxhis.itf.main.Main.main(Main.java:110) - 连接数据库失败或者加载实例失败
+java.lang.Exception: 获取handler对象为空
+	at com.foxhis.itf.utils.Utils.getItfInstance(Utils.java:122)
+	at com.foxhis.itf.service.impl.SMSGenernal.initialize(SMSGenernal.java:51)
+	at com.foxhis.itf.main.Main.main(Main.java:98)
+2018-11-27 11:46:27,137 [ERROR] com.foxhis.itf.main.Main.main(Main.java:110) - 连接数据库失败或者加载实例失败
+java.lang.Exception: 获取handler对象为空
+	at com.foxhis.itf.utils.Utils.getItfInstance(Utils.java:122)
+	at com.foxhis.itf.service.impl.SMSGenernal.initialize(SMSGenernal.java:51)
+	at com.foxhis.itf.main.Main.main(Main.java:98)
+2018-11-27 14:52:23,906 [ERROR] com.foxhis.itf.main.Main.main(Main.java:110) - 连接数据库失败或者加载实例失败
+java.lang.Exception: 获取handler对象为空
+	at com.foxhis.itf.utils.Utils.getItfInstance(Utils.java:122)
+	at com.foxhis.itf.service.impl.SMSGenernal.initialize(SMSGenernal.java:51)
+	at com.foxhis.itf.main.Main.main(Main.java:98)
+2018-11-27 14:52:42,091 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:2秒
+2018-11-27 14:52:42,116 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
+2018-11-27 14:52:42,574 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:164) - 获取站点37.1的F状态的数据:{arr=Tue Nov 27 12:00:00 CST 2018, roomno=201  , cardno1=44, cardno2=55, flag4=d, flag3=W, flag2=b, flag1=a, remark=e, card_type=0         , encoder=222       , dep=Wed Nov 28 12:00:00 CST 2018, name=hxm, pc_id=3.40}
+2018-11-27 14:52:42,574 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:168) - 开始写卡...
+2018-11-27 14:52:44,805 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.writeCard(DoorCardGenernal.java:59) - 写卡返回值null
+2018-11-27 14:52:44,805 [ERROR] com.foxhis.itf.service.impl.DoorCardGenernal.run(DoorCardGenernal.java:195) - 轮询异常：java.lang.NullPointerException
+2018-11-27 14:52:44,806 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
+2018-11-27 14:52:44,930 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:164) - 获取站点37.1的F状态的数据:{arr=Tue Nov 27 12:00:00 CST 2018, roomno=201  , cardno1=44, cardno2=55, flag4=d, flag3=W, flag2=b, flag1=a, remark=e, card_type=0         , encoder=222       , dep=Wed Nov 28 12:00:00 CST 2018, name=hxm, pc_id=3.40}
+2018-11-27 14:52:44,930 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:168) - 开始写卡...
+2018-11-27 14:52:45,942 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.writeCard(DoorCardGenernal.java:59) - 写卡返回值null
+2018-11-27 14:52:45,942 [ERROR] com.foxhis.itf.service.impl.DoorCardGenernal.run(DoorCardGenernal.java:195) - 轮询异常：java.lang.NullPointerException
+2018-11-27 14:52:46,091 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
+2018-11-27 14:52:46,198 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:164) - 获取站点37.1的F状态的数据:{arr=Tue Nov 27 12:00:00 CST 2018, roomno=201  , cardno1=44, cardno2=55, flag4=d, flag3=W, flag2=b, flag1=a, remark=e, card_type=0         , encoder=222       , dep=Wed Nov 28 12:00:00 CST 2018, name=hxm, pc_id=3.40}
+2018-11-27 14:52:46,198 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:168) - 开始写卡...
+2018-11-27 14:52:47,209 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.writeCard(DoorCardGenernal.java:59) - 写卡返回值null
+2018-11-27 14:52:47,210 [ERROR] com.foxhis.itf.service.impl.DoorCardGenernal.run(DoorCardGenernal.java:195) - 轮询异常：java.lang.NullPointerException
+2018-11-27 14:52:48,092 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
+2018-11-27 14:53:16,041 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:2秒
+2018-11-27 14:53:16,064 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
+2018-11-27 14:53:16,429 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:164) - 获取站点37.1的F状态的数据:{arr=Tue Nov 27 12:00:00 CST 2018, roomno=201  , cardno1=44, cardno2=55, flag4=d, flag3=W, flag2=b, flag1=a, remark=e, card_type=0         , encoder=222       , dep=Wed Nov 28 12:00:00 CST 2018, name=hxm, pc_id=3.40}
+2018-11-27 14:53:16,430 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:168) - 开始写卡...
+2018-11-27 14:53:18,742 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.writeCard(DoorCardGenernal.java:59) - 写卡返回值null
+2018-11-27 14:53:18,743 [ERROR] com.foxhis.itf.service.impl.DoorCardGenernal.run(DoorCardGenernal.java:195) - 轮询异常：java.lang.NullPointerException
+2018-11-27 14:53:18,743 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
+2018-11-27 14:53:18,791 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:164) - 获取站点37.1的F状态的数据:{arr=Tue Nov 27 12:00:00 CST 2018, roomno=201  , cardno1=44, cardno2=55, flag4=d, flag3=W, flag2=b, flag1=a, remark=e, card_type=0         , encoder=222       , dep=Wed Nov 28 12:00:00 CST 2018, name=hxm, pc_id=3.40}
+2018-11-27 14:53:18,791 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:168) - 开始写卡...
+2018-11-27 14:53:19,802 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.writeCard(DoorCardGenernal.java:59) - 写卡返回值null
+2018-11-27 14:53:19,802 [ERROR] com.foxhis.itf.service.impl.DoorCardGenernal.run(DoorCardGenernal.java:195) - 轮询异常：java.lang.NullPointerException
+2018-11-27 14:53:20,040 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
+2018-11-27 14:53:20,082 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:164) - 获取站点37.1的F状态的数据:{arr=Tue Nov 27 12:00:00 CST 2018, roomno=201  , cardno1=44, cardno2=55, flag4=d, flag3=W, flag2=b, flag1=a, remark=e, card_type=0         , encoder=222       , dep=Wed Nov 28 12:00:00 CST 2018, name=hxm, pc_id=3.40}
+2018-11-27 14:53:20,082 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:168) - 开始写卡...
+2018-11-27 14:57:15,308 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:2秒
+2018-11-27 14:57:15,330 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
+2018-11-27 14:57:16,080 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:164) - 获取站点37.1的F状态的数据:{arr=Tue Nov 27 12:00:00 CST 2018, roomno=201  , cardno1=44, cardno2=55, flag4=d, flag3=W, flag2=b, flag1=a, remark=e, card_type=0         , encoder=222       , dep=Wed Nov 28 12:00:00 CST 2018, name=hxm, pc_id=3.40}
+2018-11-27 14:57:16,081 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:168) - 开始写卡...

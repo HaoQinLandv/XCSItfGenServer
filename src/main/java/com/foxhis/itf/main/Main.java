@@ -109,13 +109,9 @@ public class Main {
 			e.printStackTrace();
 			LOGGER.error("连接数据库失败或者加载实例失败",e);
 		}
-		/*logDemoFrame = new LogDialog();  
-		logDemoFrame.initLog();  */
+	    //初始化日志窗口
 		logFrame = new LogFrame();
-		//logFrame.startLogThread();
-		//logFrame.initLog();
-		//logFrame.frame.setVisible(true);
-		
+
         //加上系统托盘
 		EventQueue.invokeLater(new Runnable() {
 
