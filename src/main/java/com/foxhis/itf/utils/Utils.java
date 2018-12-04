@@ -15,32 +15,30 @@ import com.foxhis.itf.handler.IVODHandler;
  *
  */
 public class Utils {
-	
-public static final String SERVER_LOGGER_NAME = "server.logger";
-	
-	
-/**
- * 判断字符串是否为空
- * @param str
- * @return
- */
+
+	public static final String SERVER_LOGGER_NAME = "server.logger";
+	/**
+	 * 判断字符串是否为空
+	 * @param str
+	 * @return
+	 */
 	public static boolean isBlank(String str) {
-        int strLen;
-        if (str == null || (strLen = str.length()) == 0) {
-            return true;
-        }
-        for (int i = 0; i < strLen; i++) {
-            if ((Character.isWhitespace(str.charAt(i)) == false)) {
-                return false;
-            }
-        }
-        return true;
-    }
-	
+		int strLen;
+		if (str == null || (strLen = str.length()) == 0) {
+			return true;
+		}
+		for (int i = 0; i < strLen; i++) {
+			if ((Character.isWhitespace(str.charAt(i)) == false)) {
+				return false;
+			}
+		}
+		return true;
+	}
+
 	public static boolean isNotBlank(String str) {
-        return !Utils.isBlank(str);
-    }
-	
+		return !Utils.isBlank(str);
+	}
+
 	/**
 	 * 如果str=null转“”
 	 * @param str
@@ -50,12 +48,12 @@ public static final String SERVER_LOGGER_NAME = "server.logger";
 	{	
 		return str==null?"":str;
 	}
-	
+
 	public static byte[]  parseStrToByte(String img) {
 		// TODO Auto-generated method stub
-        return Base64.decodeBase64(img);
+		return Base64.decodeBase64(img);
 	}
-	
+
 	public static IPoliceHandler getPoliceInstance() throws Exception
 	{
 		IPoliceHandler ipoliceHandler = null;
@@ -71,7 +69,7 @@ public static final String SERVER_LOGGER_NAME = "server.logger";
 		}
 		return ipoliceHandler;
 	}
-	
+
 	public static IVODHandler getVODInstance() throws Exception
 	{
 		IVODHandler ivodHandler = null;
@@ -87,7 +85,7 @@ public static final String SERVER_LOGGER_NAME = "server.logger";
 		}
 		return ivodHandler;
 	}
-	
+
 	public static ISMSHandler getSMSInstance() throws Exception
 	{
 		ISMSHandler ismsHandler = null;
@@ -103,9 +101,9 @@ public static final String SERVER_LOGGER_NAME = "server.logger";
 		}
 		return ismsHandler;
 	}
-	
+
 	/**
-	 * 获取handler实例
+	 *   采用spi加载第三方写的方法类并获取handler实例
 	 * @param cls
 	 * @return
 	 * @throws Exception
@@ -123,6 +121,56 @@ public static final String SERVER_LOGGER_NAME = "server.logger";
 		}
 		return ihandler;
 	}
-}
+
+	public static String getServerNameByHandler(String handler)
+	{
+		String serverName="";
+		switch (ServerNames.getServerName(handler.toUpperCase())) {
+		case DOORCARD:
+			serverName="门锁";
+			break;
+		case VOD:
+			serverName="电视点播";
+			break;
+		case IDCARD:
+			serverName="身份证";
+			break;
+		case PBX:
+			serverName="电话";
+			break;
+		case CTRLROOM:
+			serverName="客控";
+			break;
+		case POLICE:
+			serverName="公安";
+			break;
+		case SMS:
+			serverName="短信";
+			break;
+		case NOVALUES:
+			serverName="未知类型";
+			break;
+		default:
+			break;
+		}
+		return serverName;
+	}
 	
+	public static enum ServerNames{
+		
+		DOORCARD,VOD,IDCARD,PBX,CTRLROOM,POLICE,SMS,NOVALUES;
+		
+		public static ServerNames getServerName(String handler)
+		{
+			try {
+				return valueOf(handler);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				return ServerNames.NOVALUES;
+			}
+		}
+	}
+	
+}
+
 
