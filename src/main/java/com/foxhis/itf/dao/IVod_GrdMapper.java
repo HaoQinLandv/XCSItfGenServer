@@ -8,7 +8,7 @@ import com.foxhis.itf.entity.Vod_Grd;
 
 
 @MapperScan
-public interface IVod_GrdMapper {
+public interface IVod_GrdMapper  {
 	
 	public List<Vod_Grd> getVodByChanged(); 
 	

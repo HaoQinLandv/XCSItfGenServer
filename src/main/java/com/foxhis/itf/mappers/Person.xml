@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.foxhis.itf.dao.IPersonMapper">
+
+	<resultMap type="Person" id="resultPerson">
+		<id column="fh" property="fh" />
+		<result column="rzsj" property="rzsj" />
+		<result column="zwxm" property="zwxm" />
+		<result column="zjhm" property="zjhm" />
+		<result column="xb" property="xb" />
+		<result column="csrq" property="csrq" />
+		<result column="mz" property="mz" />
+		<result column="jp" property="jp" />
+		<result column="address" property="address" />
+		<result column="idcardzp" property="idcardzp" />
+		<result column="camerazp" property="camerazp" />
+	</resultMap>
+
+	<select id="getPersonBySta" resultMap="resultPerson" timeout="5">
+		select * from person where sta = #{sta}
+	</select>
+
+	<update id="updatePersonChanged" parameterType="Person" timeout="5">
+		update person set sta=#{sta},changetime=#{changetime} where fh=#{fh}
+	</update>
+</mapper>

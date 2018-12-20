@@ -109,7 +109,7 @@ public class Utils {
 	 * @return
 	 * @throws Exception
 	 */
-	public static <T> T getItfInstance(Class<T> cls) throws Exception{
+	public static <T> T getItfInstance(Class<T> cls) throws NoHandlerDefException{
 		T ihandler = null;
 		ServiceLoader<T> serviceLoader = ServiceLoader.load(cls);
 		Iterator<T> iter = serviceLoader.iterator();
@@ -118,7 +118,7 @@ public class Utils {
 		}
 		if(ihandler ==null)
 		{
-			throw new Exception("获取handler对象为空");
+			throw new NoHandlerDefException("获取handler对象为空");
 		}
 		return ihandler;
 	}
@@ -169,6 +169,13 @@ public class Utils {
 				// TODO Auto-generated catch block
 				return ServerNames.NOVALUES;
 			}
+		}
+	}
+	
+	public static class NoHandlerDefException extends Exception{
+		
+		public NoHandlerDefException(String message) {
+			super(message);
 		}
 	}
 	

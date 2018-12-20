@@ -96,7 +96,7 @@ public class Main {
 			ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 			IGenCommon genCommon = (IGenCommon) context.getBean(handler);
 			if (genCommon != null) {
-				// genCommon.initialize();
+				//genCommon.initialize();
 				scheduledpools.scheduleAtFixedRate(genCommon, 0, parseTime(runtime), TimeUnit.SECONDS);
 				LOGGER.info(MessageFormat.format("打开循环调度器成功,循环时间为:{0}秒", runtime));
 			} else {

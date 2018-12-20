@@ -1,0 +1,114 @@
+2018-11-27 10:10:45,607 [ERROR] com.foxhis.itf.main.Main.main(Main.java:110) - 连接数据库失败或者加载实例失败
+java.lang.Exception: 获取handler对象为空
+	at com.foxhis.itf.utils.Utils.getItfInstance(Utils.java:122)
+	at com.foxhis.itf.service.impl.SMSGenernal.initialize(SMSGenernal.java:51)
+	at com.foxhis.itf.main.Main.main(Main.java:98)
+2018-11-27 10:13:00,949 [ERROR] com.foxhis.itf.main.Main.main(Main.java:110) - 连接数据库失败或者加载实例失败
+java.lang.Exception: 获取handler对象为空
+	at com.foxhis.itf.utils.Utils.getItfInstance(Utils.java:122)
+	at com.foxhis.itf.service.impl.SMSGenernal.initialize(SMSGenernal.java:51)
+	at com.foxhis.itf.main.Main.main(Main.java:98)
+2018-11-27 10:13:04,710 [ INFO] com.foxhis.itf.main.Main$6.actionPerformed(Main.java:205) - 服务已正常退出..
+2018-11-27 10:30:10,855 [ERROR] com.foxhis.itf.main.Main.main(Main.java:110) - 连接数据库失败或者加载实例失败
+java.lang.Exception: 获取handler对象为空
+	at com.foxhis.itf.utils.Utils.getItfInstance(Utils.java:122)
+	at com.foxhis.itf.service.impl.SMSGenernal.initialize(SMSGenernal.java:51)
+	at com.foxhis.itf.main.Main.main(Main.java:98)
+2018-11-27 10:30:42,720 [ERROR] com.foxhis.itf.main.Main.main(Main.java:110) - 连接数据库失败或者加载实例失败
+java.lang.Exception: 获取handler对象为空
+	at com.foxhis.itf.utils.Utils.getItfInstance(Utils.java:122)
+	at com.foxhis.itf.service.impl.SMSGenernal.initialize(SMSGenernal.java:51)
+	at com.foxhis.itf.main.Main.main(Main.java:98)
+2018-11-27 10:34:08,507 [ERROR] com.foxhis.itf.main.Main.main(Main.java:110) - 连接数据库失败或者加载实例失败
+java.lang.Exception: 获取handler对象为空
+	at com.foxhis.itf.utils.Utils.getItfInstance(Utils.java:122)
+	at com.foxhis.itf.service.impl.SMSGenernal.initialize(SMSGenernal.java:51)
+	at com.foxhis.itf.main.Main.main(Main.java:98)
+2018-11-27 10:34:48,020 [ERROR] com.foxhis.itf.main.Main.main(Main.java:110) - 连接数据库失败或者加载实例失败
+java.lang.Exception: 获取handler对象为空
+	at com.foxhis.itf.utils.Utils.getItfInstance(Utils.java:122)
+	at com.foxhis.itf.service.impl.SMSGenernal.initialize(SMSGenernal.java:51)
+	at com.foxhis.itf.main.Main.main(Main.java:98)
+2018-11-27 10:45:38,877 [ERROR] com.foxhis.itf.main.Main.main(Main.java:110) - 连接数据库失败或者加载实例失败
+java.lang.Exception: 获取handler对象为空
+	at com.foxhis.itf.utils.Utils.getItfInstance(Utils.java:122)
+	at com.foxhis.itf.service.impl.SMSGenernal.initialize(SMSGenernal.java:51)
+	at com.foxhis.itf.main.Main.main(Main.java:98)
+2018-11-27 11:06:02,027 [ERROR] com.foxhis.itf.main.Main.main(Main.java:110) - 连接数据库失败或者加载实例失败
+java.lang.Exception: 获取handler对象为空
+	at com.foxhis.itf.utils.Utils.getItfInstance(Utils.java:122)
+	at com.foxhis.itf.service.impl.SMSGenernal.initialize(SMSGenernal.java:51)
+	at com.foxhis.itf.main.Main.main(Main.java:98)
+	wodetian
+	我的天
+	
+	
+	哈哈
+	
+	
+2018-11-27 11:34:55,905 [ERROR] com.foxhis.itf.main.Main.main(Main.java:110) - 连接数据库失败或者加载实例失败
+java.lang.Exception: 获取handler对象为空
+	at com.foxhis.itf.utils.Utils.getItfInstance(Utils.java:122)
+	at com.foxhis.itf.service.impl.SMSGenernal.initialize(SMSGenernal.java:51)
+	at com.foxhis.itf.main.Main.main(Main.java:98)
+2018-11-27 11:35:34,702 [ INFO] com.foxhis.itf.main.Main$6.actionPerformed(Main.java:205) - 服务已正常退出..
+2018-11-27 11:36:14,326 [ERROR] com.foxhis.itf.main.Main.main(Main.java:110) - 连接数据库失败或者加载实例失败
+java.lang.Exception: 获取handler对象为空
+	at com.foxhis.itf.utils.Utils.getItfInstance(Utils.java:122)
+	at com.foxhis.itf.service.impl.SMSGenernal.initialize(SMSGenernal.java:51)
+	at com.foxhis.itf.main.Main.main(Main.java:98)
+2018-11-27 11:38:42,599 [ERROR] com.foxhis.itf.main.Main.main(Main.java:110) - 连接数据库失败或者加载实例失败
+java.lang.Exception: 获取handler对象为空
+	at com.foxhis.itf.utils.Utils.getItfInstance(Utils.java:122)
+	at com.foxhis.itf.service.impl.SMSGenernal.initialize(SMSGenernal.java:51)
+	at com.foxhis.itf.main.Main.main(Main.java:98)
+2018-11-27 11:42:49,204 [ERROR] com.foxhis.itf.main.Main.main(Main.java:110) - 连接数据库失败或者加载实例失败
+java.lang.Exception: 获取handler对象为空
+	at com.foxhis.itf.utils.Utils.getItfInstance(Utils.java:122)
+	at com.foxhis.itf.service.impl.SMSGenernal.initialize(SMSGenernal.java:51)
+	at com.foxhis.itf.main.Main.main(Main.java:98)
+2018-11-27 11:46:27,137 [ERROR] com.foxhis.itf.main.Main.main(Main.java:110) - 连接数据库失败或者加载实例失败
+java.lang.Exception: 获取handler对象为空
+	at com.foxhis.itf.utils.Utils.getItfInstance(Utils.java:122)
+	at com.foxhis.itf.service.impl.SMSGenernal.initialize(SMSGenernal.java:51)
+	at com.foxhis.itf.main.Main.main(Main.java:98)
+2018-11-27 14:52:23,906 [ERROR] com.foxhis.itf.main.Main.main(Main.java:110) - 连接数据库失败或者加载实例失败
+java.lang.Exception: 获取handler对象为空
+	at com.foxhis.itf.utils.Utils.getItfInstance(Utils.java:122)
+	at com.foxhis.itf.service.impl.SMSGenernal.initialize(SMSGenernal.java:51)
+	at com.foxhis.itf.main.Main.main(Main.java:98)
+2018-11-27 14:52:42,091 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:2秒
+2018-11-27 14:52:42,116 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
+2018-11-27 14:52:42,574 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:164) - 获取站点37.1的F状态的数据:{arr=Tue Nov 27 12:00:00 CST 2018, roomno=201  , cardno1=44, cardno2=55, flag4=d, flag3=W, flag2=b, flag1=a, remark=e, card_type=0         , encoder=222       , dep=Wed Nov 28 12:00:00 CST 2018, name=hxm, pc_id=3.40}
+2018-11-27 14:52:42,574 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:168) - 开始写卡...
+2018-11-27 14:52:44,805 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.writeCard(DoorCardGenernal.java:59) - 写卡返回值null
+2018-11-27 14:52:44,805 [ERROR] com.foxhis.itf.service.impl.DoorCardGenernal.run(DoorCardGenernal.java:195) - 轮询异常：java.lang.NullPointerException
+2018-11-27 14:52:44,806 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
+2018-11-27 14:52:44,930 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:164) - 获取站点37.1的F状态的数据:{arr=Tue Nov 27 12:00:00 CST 2018, roomno=201  , cardno1=44, cardno2=55, flag4=d, flag3=W, flag2=b, flag1=a, remark=e, card_type=0         , encoder=222       , dep=Wed Nov 28 12:00:00 CST 2018, name=hxm, pc_id=3.40}
+2018-11-27 14:52:44,930 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:168) - 开始写卡...
+2018-11-27 14:52:45,942 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.writeCard(DoorCardGenernal.java:59) - 写卡返回值null
+2018-11-27 14:52:45,942 [ERROR] com.foxhis.itf.service.impl.DoorCardGenernal.run(DoorCardGenernal.java:195) - 轮询异常：java.lang.NullPointerException
+2018-11-27 14:52:46,091 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
+2018-11-27 14:52:46,198 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:164) - 获取站点37.1的F状态的数据:{arr=Tue Nov 27 12:00:00 CST 2018, roomno=201  , cardno1=44, cardno2=55, flag4=d, flag3=W, flag2=b, flag1=a, remark=e, card_type=0         , encoder=222       , dep=Wed Nov 28 12:00:00 CST 2018, name=hxm, pc_id=3.40}
+2018-11-27 14:52:46,198 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:168) - 开始写卡...
+2018-11-27 14:52:47,209 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.writeCard(DoorCardGenernal.java:59) - 写卡返回值null
+2018-11-27 14:52:47,210 [ERROR] com.foxhis.itf.service.impl.DoorCardGenernal.run(DoorCardGenernal.java:195) - 轮询异常：java.lang.NullPointerException
+2018-11-27 14:52:48,092 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
+2018-11-27 14:53:16,041 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:2秒
+2018-11-27 14:53:16,064 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
+2018-11-27 14:53:16,429 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:164) - 获取站点37.1的F状态的数据:{arr=Tue Nov 27 12:00:00 CST 2018, roomno=201  , cardno1=44, cardno2=55, flag4=d, flag3=W, flag2=b, flag1=a, remark=e, card_type=0         , encoder=222       , dep=Wed Nov 28 12:00:00 CST 2018, name=hxm, pc_id=3.40}
+2018-11-27 14:53:16,430 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:168) - 开始写卡...
+2018-11-27 14:53:18,742 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.writeCard(DoorCardGenernal.java:59) - 写卡返回值null
+2018-11-27 14:53:18,743 [ERROR] com.foxhis.itf.service.impl.DoorCardGenernal.run(DoorCardGenernal.java:195) - 轮询异常：java.lang.NullPointerException
+2018-11-27 14:53:18,743 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
+2018-11-27 14:53:18,791 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:164) - 获取站点37.1的F状态的数据:{arr=Tue Nov 27 12:00:00 CST 2018, roomno=201  , cardno1=44, cardno2=55, flag4=d, flag3=W, flag2=b, flag1=a, remark=e, card_type=0         , encoder=222       , dep=Wed Nov 28 12:00:00 CST 2018, name=hxm, pc_id=3.40}
+2018-11-27 14:53:18,791 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:168) - 开始写卡...
+2018-11-27 14:53:19,802 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.writeCard(DoorCardGenernal.java:59) - 写卡返回值null
+2018-11-27 14:53:19,802 [ERROR] com.foxhis.itf.service.impl.DoorCardGenernal.run(DoorCardGenernal.java:195) - 轮询异常：java.lang.NullPointerException
+2018-11-27 14:53:20,040 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
+2018-11-27 14:53:20,082 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:164) - 获取站点37.1的F状态的数据:{arr=Tue Nov 27 12:00:00 CST 2018, roomno=201  , cardno1=44, cardno2=55, flag4=d, flag3=W, flag2=b, flag1=a, remark=e, card_type=0         , encoder=222       , dep=Wed Nov 28 12:00:00 CST 2018, name=hxm, pc_id=3.40}
+2018-11-27 14:53:20,082 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:168) - 开始写卡...
+2018-11-27 14:57:15,308 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:2秒
+2018-11-27 14:57:15,330 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:143) - 获取当前的站点37.1
+2018-11-27 14:57:16,080 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:164) - 获取站点37.1的F状态的数据:{arr=Tue Nov 27 12:00:00 CST 2018, roomno=201  , cardno1=44, cardno2=55, flag4=d, flag3=W, flag2=b, flag1=a, remark=e, card_type=0         , encoder=222       , dep=Wed Nov 28 12:00:00 CST 2018, name=hxm, pc_id=3.40}
+2018-11-27 14:57:16,081 [ INFO] com.foxhis.itf.service.impl.DoorCardGenernal.doTask(DoorCardGenernal.java:168) - 开始写卡...

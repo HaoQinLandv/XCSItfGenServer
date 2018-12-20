@@ -3,12 +3,11 @@ package com.foxhis.itf.dao;
 import java.util.List;
 
 import org.mybatis.spring.annotation.MapperScan;
-
 import com.foxhis.itf.entity.Message_Send;
 
 
 @MapperScan
-public interface IMessage_SendMapper {
+public interface IMessage_SendMapper  {
 	
 	/**
 	 * 查询所有符合发送请求的数据

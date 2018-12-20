@@ -1,67 +1,37 @@
-package com.foxhis.itf.service.impl;
+package com.foxhis.itf.tasks;
+
+import java.text.MessageFormat;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Resource;
 
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
+import com.foxhis.itf.dao.IIdScanMapper;
+import com.foxhis.itf.entity.IdScan_ga;
 import com.foxhis.itf.handler.IPoliceHandler;
 import com.foxhis.itf.service.IDoTask;
-import com.foxhis.itf.service.IGenCommon;
 import com.foxhis.itf.utils.Utils;
-import com.foxhis.itf.utils.Utils.NoHandlerDefException;
-
-
 
 /**
- * 公安专用类
- * @author tq
+ * 金城公安，已经在用
+ * @author Administrator
  *
  */
-@Service("police")
-public class PoliceGenernal implements IGenCommon{
-
+public class PoliceTask implements IDoTask<IPoliceHandler>{
 
 	private static final Logger LOGGER = Logger.getLogger(Utils.SERVER_LOGGER_NAME);
-	private IPoliceHandler policeimpl;
-	
-	@Autowired
-	private IDoTask<IPoliceHandler> doTask;
-	//	private String path;
-	
-	private Object obj = new Object();
-
+	@Resource
+	private IIdScanMapper ms ;
 	@Override
-	public void initialize() throws NoHandlerDefException{
+	public void doTask(IPoliceHandler policeimpl) {
 		// TODO Auto-generated method stub
-		this.policeimpl = Utils.getItfInstance(IPoliceHandler.class);
-	
-	}
-	
-	public PoliceGenernal() throws NoHandlerDefException {
-		// TODO Auto-generated constructor stub
-		initialize();
-	}
 
-	@Override
-	public void run() {
-		// TODO Auto-generated method stub
-		synchronized (obj) {
-	    	try{
-				doTask.doTask(policeimpl);
-			}catch (Throwable e) {
-				// TODO: handle exception
-				LOGGER.error("轮询异常："+e);
-			}
-			
-		}
-	}
-
- /*
-	public void doTask() throws Exception
-	{	
 		//获取公安xml文件
 		List<String> xmlfiles = policeimpl.getXMLFile();
-		
+
 		for (String xmlfile : xmlfiles) {
 			LOGGER.info(MessageFormat.format("获取文件路径：{0}", xmlfile));	
 			List<Map<String, Object>> retlist = policeimpl.parseXMLtoMap(xmlfile);
@@ -70,32 +40,32 @@ public class PoliceGenernal implements IGenCommon{
 			{
 				for (Map<String, Object> retmap : retlist) {
 					try {
-						int id = ms.getIdsBySysExtraid();//获取流水号
+						/*int id = ms.getIdsBySysExtraid();//获取流水号
 						System.out.println(id);
 						id+=1;
-						String no = id+"";
+						String no = id+"";*/
 						LOGGER.info(MessageFormat.format("获取该文件内容：{0}", retmap));
-						
+
 						String id = (String)retmap.get("id");
 						String roomno = (String)retmap.get("roomno");
 						String guesttype = (String)retmap.get("guesttype");
 						String name = (String)retmap.get("name");
-						
+
 						String name2 = (String)retmap.get("name2");
 						String sex = (String)retmap.get("sex");
 						String birthday = (String)retmap.get("birthday");
 						String race = (String)retmap.get("race");
-						
+
 						String country = (String)retmap.get("country");
 						String nation = (String)retmap.get("nation");
 						String address = (String)retmap.get("address");
 						String prv = (String)retmap.get("prv");
-						
+
 						String idtype = (String)retmap.get("idtype");
 						String idcode = (String)retmap.get("idcode");
 						String scantime = (String)retmap.get("scantime");
 						//String idpic = (String)retmap.get("idpic");
-						
+
 						Date date1 = (Date)retmap.get("date1");
 						Date date2 = (Date)retmap.get("date2");
 						Date date3 = (Date)retmap.get("date3");
@@ -137,7 +107,7 @@ public class PoliceGenernal implements IGenCommon{
 							//设置p_hxm_gong_an_process过程为anymode
 							ms.updateProMode();
 							ms.afterUpdate(id);
-							
+
 						}
 					} catch (Exception e) {
 						// TODO Auto-generated catch block
@@ -154,7 +124,8 @@ public class PoliceGenernal implements IGenCommon{
 				policeimpl.deleteXMLFile(false,xmlfile);//异常移动文件
 			}
 		}
-		
-	}*/
+	}
+
+
 
 }

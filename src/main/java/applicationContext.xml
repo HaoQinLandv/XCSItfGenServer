@@ -27,6 +27,10 @@
         <property name="username" value="${username}"/>
         <property name="password" value="${password}"/>
     </bean>
+    
+ 
+    <bean class = "com.foxhis.itf.tasks.PoliceTask">
+    </bean>
     <!--  此处因为上面定义了自动扫描包产生bean，注解service（value）就可以直接定位到具体的bean
     <bean id="doorcard" class = "com.foxhis.itf.service.impl.DoorCardGenernal">
     </bean>

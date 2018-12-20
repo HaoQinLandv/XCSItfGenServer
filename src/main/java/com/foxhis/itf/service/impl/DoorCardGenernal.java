@@ -16,6 +16,7 @@ import com.foxhis.itf.entity.DoorCard_Req;
 import com.foxhis.itf.handler.IDoorCardHandler;
 import com.foxhis.itf.service.IGenCommon;
 import com.foxhis.itf.utils.Utils;
+import com.foxhis.itf.utils.Utils.NoHandlerDefException;
 
 @Service("doorcard")
 public class DoorCardGenernal implements IGenCommon{
@@ -35,14 +36,15 @@ public class DoorCardGenernal implements IGenCommon{
 	private static final String READ  = "R";
 	private static final String ERASE = "C";
 
-	public DoorCardGenernal() {
+	public DoorCardGenernal() throws NoHandlerDefException {
 		// TODO Auto-generated constructor stub
+		initialize();
 	}
 	/**
 	 * 初始化以获取handler
 	 */
 	@Override
-	public void initialize() throws Exception {
+	public void initialize() throws NoHandlerDefException {
 		// TODO Auto-generated method stub
 		doorcardimpl = Utils.getItfInstance(IDoorCardHandler.class);
 	}
