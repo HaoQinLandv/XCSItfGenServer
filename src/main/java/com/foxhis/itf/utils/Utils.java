@@ -104,6 +104,7 @@ public class Utils {
 
 	/**
 	 *   采用spi加载第三方写的方法类并获取handler实例
+	 * @param <T>
 	 * @param cls
 	 * @return
 	 * @throws Exception
