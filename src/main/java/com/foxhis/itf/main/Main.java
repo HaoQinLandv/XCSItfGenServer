@@ -52,7 +52,7 @@ public class Main {
 	private static String handler;
 
 	public static void main(String[] args) {
-		 System.setProperty("file.encoding", "UTF-8");
+		System.setProperty("file.encoding", "UTF-8");
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (Exception e) {
@@ -83,20 +83,18 @@ public class Main {
 			LOGGER.error("加载配置文件失败", e);
 			System.exit(-1);
 		}
+		scheduledpools = Executors.newScheduledThreadPool(1);
+		// 轮询时长
+		String runtime = properties.getProperty("time");
+		// 接口类型句柄
+		String itfhandler = properties.getProperty("handler");
+		handler = itfhandler == null ? null : itfhandler.toLowerCase();
 		try {
-
-			scheduledpools = Executors.newScheduledThreadPool(1);
-			// 轮询时长
-			String runtime = properties.getProperty("time");
-			// 接口类型句柄
-			String itfhandler = properties.getProperty("handler");
-			handler = itfhandler == null ? null : itfhandler.toLowerCase();
-			
 			// 加载spring配置文件
 			ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 			IGenCommon genCommon = (IGenCommon) context.getBean(handler);
 			if (genCommon != null) {
-				//genCommon.initialize();
+				genCommon.initialize();
 				scheduledpools.scheduleAtFixedRate(genCommon, 0, parseTime(runtime), TimeUnit.SECONDS);
 				LOGGER.info(MessageFormat.format("打开循环调度器成功,循环时间为:{0}秒", runtime));
 			} else {
@@ -104,14 +102,13 @@ public class Main {
 			}
 
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 			LOGGER.error("连接数据库失败或者加载实例失败", e);
 			System.exit(-1);
 		}
 		// 初始化日志窗口
-		logFrame = new LogFrame();
+		logFrame = LogFrame.getInstance();
 		SEVNAME = Utils.getServerNameByHandler(handler);
+		
 		// 加上系统托盘
 		EventQueue.invokeLater(new Runnable() {
 
@@ -119,7 +116,7 @@ public class Main {
 				createSystemTray();
 			}
 		});
-
+		LOGGER.info("启动"+SEVNAME+"服务成功...");
 	}
 
 	private static void createSystemTray() {
@@ -141,12 +138,14 @@ public class Main {
 		logItem.setLabel("日志");
 		logItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				//
+				//				if (!logFrame.isLogReaderThreadInterrupt()) {
+				//					logFrame.setLogReaderThreadInterrupt(true);
+				//					logFrame.startLogThread();
+				//				}
 
-				if (!logFrame.logReader.isFlg()) {
-					logFrame.logReader.setFlg(true);
-					logFrame.startLogThread();
-				}
-				logFrame.frame.setVisible(true);
+				if(!logFrame.isMonitorStar())logFrame.logFileMonitorStart();
+				logFrame.getFrame().setVisible(true);
 
 			}
 		});

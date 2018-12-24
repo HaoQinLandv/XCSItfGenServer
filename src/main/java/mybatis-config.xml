@@ -6,12 +6,12 @@
 	<!-- 元素允许在主配置文件之外提供一个properties格式对应文件，从而使得主配置文件更加通用。这样对部署非常有用 
 	  如果需要在包外配置数据库参数，则，properties可以不用配置，直接在sqlSessionFactory.build(inputStream,properties)，中的properties生成
 	<properties resource="dbsybase.properties" />-->
-	<!-- 设置别名，一定要放在properties下面  
+	<!-- 设置别名，一定要放在properties下面  -->
 	
-	<settings>
-		<setting name="defaultStatementTimeout" value="${timeout}" />
-	</settings>
-	-->
+	<!-- <settings>
+		<setting name="timeout" value="5" />
+	</settings> -->
+	
 	<typeAliases><!-- 别名的扫描包，entity包下面的数据以类为别名 -->
 		 <package name="com.foxhis.itf.entity"/>
 	</typeAliases>

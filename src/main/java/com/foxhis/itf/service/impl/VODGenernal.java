@@ -12,9 +12,11 @@ import org.springframework.stereotype.Service;
 
 import com.foxhis.itf.dao.IVod_GrdMapper;
 import com.foxhis.itf.entity.Vod_Grd;
+import com.foxhis.itf.exception.NoHandlerDefException;
 import com.foxhis.itf.handler.IVODHandler;
 import com.foxhis.itf.service.IGenCommon;
 import com.foxhis.itf.utils.Utils;
+
 
 
 /**
@@ -34,15 +36,14 @@ public class VODGenernal  implements IGenCommon{
 
 
 	@Override
-	public void initialize() throws Exception {
+	public void initialize() throws NoHandlerDefException {
 		// TODO Auto-generated method stub
 		this.vodimpl =Utils.getItfInstance(IVODHandler.class);
 	}
 	
-	public VODGenernal(){
+	public VODGenernal() throws NoHandlerDefException{
 		// TODO Auto-generated constructor stub
 	
-		
 	}
 
 	@Override

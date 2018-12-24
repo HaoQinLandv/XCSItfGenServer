@@ -4,11 +4,11 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.foxhis.itf.exception.NoHandlerDefException;
 import com.foxhis.itf.handler.IPoliceHandler;
 import com.foxhis.itf.service.IDoTask;
 import com.foxhis.itf.service.IGenCommon;
 import com.foxhis.itf.utils.Utils;
-import com.foxhis.itf.utils.Utils.NoHandlerDefException;
 
 
 
@@ -39,7 +39,7 @@ public class PoliceGenernal implements IGenCommon{
 	
 	public PoliceGenernal() throws NoHandlerDefException {
 		// TODO Auto-generated constructor stub
-		initialize();
+
 	}
 
 	@Override

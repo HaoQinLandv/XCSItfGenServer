@@ -23,7 +23,7 @@
 	</resultMap>
 	
      <!-- 查找未发送的短信 -->  
-     <select id="getMs_SendBySta"  resultMap="resultMSMap" timeout="5">  
+     <select id="getMs_SendBySta"  resultMap="resultMSMap" >  
        select  a.shortmsgno,
          a.shortmsgbody,   
          a.sendstate,   
@@ -37,7 +37,7 @@
      </select>  
            
     <!-- 修改    -->   
-    <update id="updateMs_Send" parameterType="Message_Send" timeout="5">    
+    <update id="updateMs_Send" parameterType="Message_Send" >    
        update sm_send set sendstate=#{sendstate},finishtime = getdate(),resultdescrib=#{resultdescrib} where sendid= #{sendid} 
     </update>    
      
@@ -46,7 +46,7 @@
              原符号       <        <=      >       >=       &        '        "
            替换符号    &lt;    &lt;=   &gt;    &gt;=   &amp;   &apos;  &quot; 
      --> 
-    <update id="updateOldMsg" timeout="5">    
+    <update id="updateOldMsg" >    
       update sm_send set sendstate = -3 where timelimit &lt; getdate() and sendstate in (1,2,3,4)
     </update>    
         

@@ -3,7 +3,7 @@
 "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.foxhis.itf.dao.IPersonMapper">
 
-	<resultMap type="Person" id="resultPerson">
+	<!-- <resultMap type="Person" id="resultPerson">
 		<id column="fh" property="fh" />
 		<result column="rzsj" property="rzsj" />
 		<result column="zwxm" property="zwxm" />
@@ -16,12 +16,12 @@
 		<result column="idcardzp" property="idcardzp" />
 		<result column="camerazp" property="camerazp" />
 	</resultMap>
-
-	<select id="getPersonBySta" resultMap="resultPerson" timeout="5">
+ -->
+	<select id="getPersonBySta" parameterType="string" resultType="Person">
 		select * from person where sta = #{sta}
 	</select>
 
-	<update id="updatePersonChanged" parameterType="Person" timeout="5">
+	<update id="updatePersonChanged" parameterType="Person">
 		update person set sta=#{sta},changetime=#{changetime} where fh=#{fh}
 	</update>
 </mapper>

@@ -13,10 +13,11 @@ import org.springframework.stereotype.Service;
 
 import com.foxhis.itf.dao.IDoorCard_ReqMapper;
 import com.foxhis.itf.entity.DoorCard_Req;
+import com.foxhis.itf.exception.NoHandlerDefException;
 import com.foxhis.itf.handler.IDoorCardHandler;
 import com.foxhis.itf.service.IGenCommon;
 import com.foxhis.itf.utils.Utils;
-import com.foxhis.itf.utils.Utils.NoHandlerDefException;
+
 
 @Service("doorcard")
 public class DoorCardGenernal implements IGenCommon{
@@ -38,7 +39,7 @@ public class DoorCardGenernal implements IGenCommon{
 
 	public DoorCardGenernal() throws NoHandlerDefException {
 		// TODO Auto-generated constructor stub
-		initialize();
+		
 	}
 	/**
 	 * 初始化以获取handler

@@ -24,8 +24,7 @@
 	</resultMap>
 
 
-	<select id="getDoorCard_ReqBySta" resultMap="DoorCard_ReqMap"
-		timeout="5">
+	<select id="getDoorCard_ReqBySta" resultMap="DoorCard_ReqMap">
 		select
 		id,
 		roomno,
@@ -41,21 +40,18 @@
 		from doorcard_req where sta = #{sta} and pc_id = #{pc_id}
 	</select>
 
-	<update id="updateWriteData" parameterType="DoorCard_Req"
-		timeout="5">
+	<update id="updateWriteData" parameterType="DoorCard_Req" >
 		update doorcard_req set remark=#{remark},sta=#{sta} where
 		id=#{id}
 	</update>
 
-	<update id="updateReadData" parameterType="DoorCard_Req"
-		timeout="5">
+	<update id="updateReadData" parameterType="DoorCard_Req" >
 		update doorcard_req set
 		remark=#{remark},sta=#{sta},arr=#{arr},dep=#{dep},flag4=#{flag4} where
 		id=#{id}
 	</update>
 
-	<update id="updateEraseData" parameterType="DoorCard_Req"
-		timeout="5">
+	<update id="updateEraseData" parameterType="DoorCard_Req" >
 		update doorcard_req set remark=#{remark},sta=#{sta} where
 		id=#{id}
 	</update>

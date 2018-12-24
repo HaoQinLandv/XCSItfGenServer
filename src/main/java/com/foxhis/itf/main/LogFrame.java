@@ -7,8 +7,11 @@ import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.io.File;
+import java.io.FileFilter;
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -17,24 +20,31 @@ import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import javax.swing.WindowConstants;
 
+import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.io.monitor.FileAlterationListenerAdaptor;
+import org.apache.commons.io.monitor.FileAlterationMonitor;
+import org.apache.commons.io.monitor.FileAlterationObserver;
+
 public class LogFrame {
 
-	public JFrame frame;
-
+	private JFrame frame;
     private JScrollPane logScrollPane;  
     private JTextArea logTextArea;  
-    public  LogReader logReader ;
-
+    //private LogReader logReaderRunable ;
+    private Map<String, Long> cacheMap =new  ConcurrentHashMap<String, Long>();
     
-    private static final File logFile = new File(System.getProperty("user.dir")+"\\logs\\foxerror.log");
-    
+    private static final File logDir = new File(System.getProperty("user.dir")+"\\logs\\");
+    //private static final File logFile = new File(System.getProperty("user.dir")+"\\logs\\foxerror.log");
+    private static final String KEY = "lastTimeFileSize";
+    private static final String[] extensions = {"log"};
+    private boolean isMonitorStar;
 	  /**
      * 主窗口大小
      */
-    public final static int MAIN_WINDOW_X = 240;
-    public final static int MAIN_WINDOW_Y = 100;
-    public final static int MAIN_WINDOW_WIDTH = 885;
-    public final static int MAIN_WINDOW_HEIGHT = 636;
+    private final static int MAIN_WINDOW_X = 240;
+    private final static int MAIN_WINDOW_Y = 100;
+    private final static int MAIN_WINDOW_WIDTH = 885;
+    private final static int MAIN_WINDOW_HEIGHT = 636;
 
 	
 	public static void main(String[] args) {
@@ -46,25 +56,53 @@ public class LogFrame {
 				// TODO Auto-generated method stub
 				LogFrame logFrame = new LogFrame();
 				logFrame.initLog();
+				logFrame.logFileMonitorStart();
 				logFrame.frame.setVisible(true);
 			}
 		});
 
 	}
+	private static class InnerSingleton{
+		public static LogFrame logFrame  = new LogFrame();
+	}
 	
-	public LogFrame() {
+	public static LogFrame getInstance()
+	{
+		
+		return InnerSingleton.logFrame;
+	}
+	
+	private FileAlterationMonitor fileMonitor;
+	private LogFrame() {
 		// TODO Auto-generated constructor stub
 		initialze();
 		initLog();
+		
+		
+	}
+	
+//	public  LogReader getLogReader() {
+//		return logReaderRunable;
+//	}
+	
+	public  JFrame getFrame() {
+		return frame;
 	}
 	
 	public void dispose()
 	{
 		if(frame!=null)
 			frame.dispose();
-		if(logReader!=null)
-			logReader.setFlg(false);
+//		if(logReaderRunable!=null)
+//			logReaderRunable.setFlg(false);
 	}
+	
+
+	public void cleanCache()
+	{
+		cacheMap.clear();
+	}
+	
 	
 	public void initialze()
 	{
@@ -129,7 +167,9 @@ public class LogFrame {
 			@Override
 			public void windowClosing(WindowEvent e) {
 				// TODO Auto-generated method stub
-				logReader.setFlg(false);
+				//logReaderRunable.setFlg(false);
+				logFileMonitorInterrupt();
+				
 			}
 			
 			@Override
@@ -147,46 +187,86 @@ public class LogFrame {
 		
 	
 	}
-	
-	public void initLog()
-	{
-		RandomAccessFile randomFile=null;
-		long lastTimeFileSize = 0; // 初始文件大小
-		try {
-			randomFile = new RandomAccessFile(logFile, "r");
-			randomFile.seek(lastTimeFileSize);
-			String tmp = null;
 
-			while ((tmp = randomFile.readLine()) != null) {
-				logTextArea.append(new String(tmp.getBytes("iso-8859-1"), "utf-8"));
-				logTextArea.append("\n");
-			}
-		lastTimeFileSize = randomFile.length();//读到最后的大小
+	public boolean isMonitorStar() {
+		return isMonitorStar;
+	}
+	
+	public void logFileMonitorInterrupt()
+	{
+		try {
+			fileMonitor.stop();
+			isMonitorStar = false;
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		finally {
-			try {
-				randomFile.close();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		
-		logReader = new LogReader(logFile,lastTimeFileSize);
-		if(!logReader.isFlg())
-			logReader.setFlg(true);
 	}
 	
-	public void startLogThread()
+	public void initLog()
 	{
-		Thread logThread = new Thread(logReader);
-		logThread.start();
+		long lastTimeFileSize = 0; // 初始文件大小
+		cacheMap.put(KEY, lastTimeFileSize);
+		FileFilterImpl filterImpl = new FileFilterImpl(extensions);
+		FileAlterationObserver logFileObserver=new FileAlterationObserver(logDir, filterImpl );
+		logFileObserver.addListener(new FileListener());
+		fileMonitor = new FileAlterationMonitor(2000, logFileObserver);
+		//默认启动
+		logFileMonitorStart();
+//		RandomAccessFile randomFile=null;
+//		long lastTimeFileSize = 0; // 初始文件大小
+//		try {
+//			randomFile = new RandomAccessFile(logFile, "r");
+//			randomFile.seek(lastTimeFileSize);
+//			String tmp = null;
+//
+//			while ((tmp = randomFile.readLine()) != null) {
+//				logTextArea.append(new String(tmp.getBytes("iso-8859-1"), "utf-8"));
+//				logTextArea.append("\n");
+//			}
+//		lastTimeFileSize = randomFile.length();//读到最后的大小
+//	
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		finally {
+//			try {
+//				randomFile.close();
+//			} catch (IOException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//		}
+//		
+//		logReaderRunable = new LogReader(logFile,lastTimeFileSize);
+//		if(!logReaderRunable.isFlg())
+//			logReaderRunable.setFlg(true);
+		//初始化线程池
+		
 	}
 	
-	class LogReader implements Runnable{
+	public void logFileMonitorStart()
+	{
+		/*Thread logThread = new Thread(logReader);
+		logThread.start();*/
+//		logReadService.execute(logReaderRunable);
+		try {
+			fileMonitor.start();
+			isMonitorStar = true;
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+//	public boolean isLogReaderThreadInterrupt()
+//	{
+//		return logReaderRunable.isFlg();
+//	}
+//	
+	/*class LogReader implements Runnable{
 
 		private File logFile = null;
 		private volatile boolean flg;
@@ -238,6 +318,108 @@ public class LogFrame {
 				}
 	        }
 
+		}
+	}*/
+	
+	/**
+	 * 文件监听类
+	 * @author Administrator
+	 *
+	 */
+	class FileListener extends FileAlterationListenerAdaptor{
+		
+		/**
+	     * 文件创建时执行的动作
+	     */
+	    @Override
+	    public void onFileCreate(File file) {
+	        // To do something
+	        System.out.println("Create file: "+file.getName());
+	    }
+	    
+	    /**
+	     * 文件删除（转移）时执行的动作
+	     */
+	    @Override
+	    public void onFileDelete(File file) {
+	        // To do something
+	        System.out.println("Delete file: "+file.getName());
+	    }
+	    
+	    /**
+	     * 文件内容改变时执行的动作
+	     */
+	    @Override
+	    public void onFileChange(File file) {
+	    	// To do something
+	    	RandomAccessFile randomFile=null;
+	    	long lastTimeFileSize = cacheMap.get(KEY).longValue();
+	    	try {
+	    		randomFile = new RandomAccessFile(file, "r");
+	    		long nowTimeFileSize = randomFile.length();
+	    		if(nowTimeFileSize!=lastTimeFileSize)
+	    		{
+	    			randomFile.seek(lastTimeFileSize);
+	    			cacheMap.put(KEY, nowTimeFileSize);
+		    		String tmp = null;
+		    		while ((tmp = randomFile.readLine()) != null) {
+		    			logTextArea.append(new String(tmp.getBytes("iso-8859-1"), "utf-8"));
+		    			logTextArea.append("\n");
+		    		}
+	    		}
+		
+	    	} catch (Exception e) {
+	    		// TODO Auto-generated catch block
+	    	}
+	    	finally {
+	    		try {
+	    			randomFile.close();
+	    		} catch (IOException e) {
+	    			// TODO Auto-generated catch block
+	    			e.printStackTrace();
+	    		}
+	    	}
+	    	System.out.println("Change file: "+file.getName());
+	    }
+
+	    /**
+	     * 开始执行监听时执行的动作
+	     */
+	    @Override
+	    public void onStart(FileAlterationObserver observer) {
+	        // To do something
+	    	super.onStart(observer);
+	    }
+	    
+	    /**
+	     * 停止监听时执行的动作
+	     */
+	    @Override
+	    public void onStop(FileAlterationObserver observer) {
+	        // To do something
+	    	super.onStop(observer);
+	    }
+		
+	}
+
+    
+	class FileFilterImpl  implements FileFilter{
+
+		private String[] extensions;
+		
+		public FileFilterImpl(String...extensions) {
+			// TODO Auto-generated constructor stub
+			this.extensions = extensions;
+		}
+		@Override
+		public boolean accept(File pathname) {
+			// TODO Auto-generated method stub
+			return FilenameUtils.isExtension(pathname.getName(), extensions);
+		}
+		
+		public String[] getExtensions()
+		{
+			return extensions;
 		}
 	}
 

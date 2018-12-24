@@ -25,6 +25,13 @@ public class Person {
 	private String settime;
 	private String changetime;
 	
+	@Override
+	public String toString() {
+		return "Person [fh=" + fh + ", rzsj=" + rzsj + ", zwxm=" + zwxm + ", zjhm=" + zjhm + ", zjlx=" + zjlx + ", xb="
+				+ xb + ", csrq=" + csrq + ", mz=" + mz + ", jg=" + jg + ", address=" + address + ", idcardzp="
+				+ idcardzp + ", camerazp=" + camerazp + ", type=" + type + ", sta=" + sta + ", settime=" + settime
+				+ ", changetime=" + changetime + "]";
+	}
 	public String getSettime() {
 		return settime;
 	}

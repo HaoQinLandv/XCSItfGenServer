@@ -5,9 +5,7 @@ import java.util.ServiceLoader;
 
 import org.apache.commons.codec.binary.Base64;
 
-import com.foxhis.itf.handler.IPoliceHandler;
-import com.foxhis.itf.handler.ISMSHandler;
-import com.foxhis.itf.handler.IVODHandler;
+import com.foxhis.itf.exception.NoHandlerDefException;
 
 /**
  * 公共方法类
@@ -53,7 +51,7 @@ public class Utils {
 		// TODO Auto-generated method stub
 		return Base64.decodeBase64(img);
 	}
-
+/*
 	public static IPoliceHandler getPoliceInstance() throws Exception
 	{
 		IPoliceHandler ipoliceHandler = null;
@@ -100,7 +98,7 @@ public class Utils {
 			throw new Exception("获取ismsHandler为空");
 		}
 		return ismsHandler;
-	}
+	}*/
 
 	/**
 	 *   采用spi加载第三方写的方法类并获取handler实例
@@ -172,12 +170,6 @@ public class Utils {
 		}
 	}
 	
-	public static class NoHandlerDefException extends Exception{
-		
-		public NoHandlerDefException(String message) {
-			super(message);
-		}
-	}
 	
 }
 

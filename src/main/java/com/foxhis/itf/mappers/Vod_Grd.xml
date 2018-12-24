@@ -17,11 +17,11 @@
 		<result column="date" property="date" />
 	</resultMap>
 
-	<select id="getVodByChanged" resultMap="resultVodGrd" timeout="5">
+	<select id="getVodByChanged" resultMap="resultVodGrd">
 		select * from vod_grd where changed = 'T'
 	</select>
 
-	<update id="updateVodChanged" parameterType="String" timeout="5">
+	<update id="updateVodChanged" parameterType="String">
 		update vod_grd set changed=#{changed} where roomno=#{roomno}
 	</update>
 </mapper>

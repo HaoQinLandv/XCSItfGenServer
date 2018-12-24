@@ -14,9 +14,11 @@ import org.springframework.stereotype.Service;
 import com.foxhis.itf.dao.IMessage_SendMapper;
 import com.foxhis.itf.entity.Message_Send;
 import com.foxhis.itf.entity.SM_Sendplus;
+import com.foxhis.itf.exception.NoHandlerDefException;
 import com.foxhis.itf.handler.ISMSHandler;
 import com.foxhis.itf.service.IGenCommon;
 import com.foxhis.itf.utils.Utils;
+
 
 
 
@@ -46,7 +48,7 @@ public class SMSGenernal implements IGenCommon
 
 	
 	@Override
-	public void initialize() throws Exception {
+	public void initialize() throws NoHandlerDefException {
 		// TODO Auto-generated method stub
 		this.smsimpl=Utils.getItfInstance(ISMSHandler.class);
 		//先更新过期的数据
@@ -54,8 +56,9 @@ public class SMSGenernal implements IGenCommon
 		LOGGER.info("更新过期数据...");
 	}
 	
-	public SMSGenernal(){
+	public SMSGenernal() throws NoHandlerDefException{
 	
+		
 	}
 
 	public boolean isRegularlySend(Message_Send message_Send)
