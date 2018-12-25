@@ -24,7 +24,9 @@ import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.monitor.FileAlterationListenerAdaptor;
 import org.apache.commons.io.monitor.FileAlterationMonitor;
 import org.apache.commons.io.monitor.FileAlterationObserver;
+import org.springframework.stereotype.Component;
 
+@Component("logframe")
 public class LogFrame {
 
 	private JFrame frame;
@@ -38,6 +40,9 @@ public class LogFrame {
     private static final String KEY = "lastTimeFileSize";
     private static final String[] extensions = {"log"};
     private boolean isMonitorStar;
+    
+    
+
 	  /**
      * 主窗口大小
      */
@@ -326,6 +331,7 @@ public class LogFrame {
 	 * @author Administrator
 	 *
 	 */
+	
 	class FileListener extends FileAlterationListenerAdaptor{
 		
 		/**

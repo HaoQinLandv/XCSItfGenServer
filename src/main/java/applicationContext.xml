@@ -28,24 +28,7 @@
         <property name="password" value="${password}"/>
     </bean>
     
- 
-    <bean class = "com.foxhis.itf.tasks.PoliceTask">
-    </bean>
-    <!--  此处因为上面定义了自动扫描包产生bean，注解service（value）就可以直接定位到具体的bean
-    <bean id="doorcard" class = "com.foxhis.itf.service.impl.DoorCardGenernal">
-    </bean>
-    <bean id="sms" class = "com.foxhis.itf.service.impl.SMSGenernal">
-       <property name = "length" value="${length}">
-       </property>
-    </bean>
-    <bean id="police" class = "com.foxhis.itf.service.impl.PoliceGenernal">
-    </bean>
-    <bean id="vod" class = "com.foxhis.itf.service.impl.VODGenernal">
-    </bean>
-    <bean id="ctrlroom" class = "com.foxhis.itf.service.impl.CtrlRoomGenernal">
-    </bean>
-    -->
-    <!--【核心部分】 配置MyBatis的sqlSessionFactory -->
+     <!--【核心部分】 配置MyBatis的sqlSessionFactory -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <!-- 配置数据源 dataSource-->
         <property name="dataSource" ref="dataSource"/>
@@ -66,5 +49,47 @@
           class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
     </bean>
+    <bean class = "com.foxhis.itf.tasks.PoliceTask" />
+    
+    
+    
+    
+    
+    
+    
+    
+<!--     <bean id = "filelistener" class="com.foxhis.itf.main.LogFrame.FileListener" />
+    
+    <bean id="filterImpl" class = "com.foxhis.itf.main.FileFilterImpl" >
+        <constructor-arg index="0" value="log"/>        
+    </bean>
+    <bean id="fileobserver" class = "org.apache.commons.io.monitor.FileAlterationObserver">
+        <constructor-arg index="0" ref = "logdir"/>
+        <constructor-arg index="1" ref = "filterImpl"/>
+    </bean>
+    
+    <bean id = "logdir" class="java.io.File">
+        <constructor-arg index="0" value="file:#{systemProperties['user.dir']}/logs/"/>
+    </bean>
+     <bean id = "filemoniter" class="org.apache.commons.io.monitor.FileAlterationMonitor">
+        <constructor-arg index="0" value="2000"/>
+        <constructor-arg index="1" ref="fileobserver"/>
+    </bean> -->
+
+    <!--  此处因为上面定义了自动扫描包产生bean，注解service（value）就可以直接定位到具体的bean
+    <bean id="doorcard" class = "com.foxhis.itf.service.impl.DoorCardGenernal">
+    </bean>
+    <bean id="sms" class = "com.foxhis.itf.service.impl.SMSGenernal">
+       <property name = "length" value="${length}">
+       </property>
+    </bean>
+    <bean id="police" class = "com.foxhis.itf.service.impl.PoliceGenernal">
+    </bean>
+    <bean id="vod" class = "com.foxhis.itf.service.impl.VODGenernal">
+    </bean>
+    <bean id="ctrlroom" class = "com.foxhis.itf.service.impl.CtrlRoomGenernal">
+    </bean>
+    -->
+    
 
 </beans>

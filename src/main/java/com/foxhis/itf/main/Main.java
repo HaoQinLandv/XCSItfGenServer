@@ -89,9 +89,10 @@ public class Main {
 		// 接口类型句柄
 		String itfhandler = properties.getProperty("handler");
 		handler = itfhandler == null ? null : itfhandler.toLowerCase();
+		ApplicationContext context =null;
 		try {
 			// 加载spring配置文件
-			ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+			context = new ClassPathXmlApplicationContext("applicationContext.xml");
 			IGenCommon genCommon = (IGenCommon) context.getBean(handler);
 			if (genCommon != null) {
 				genCommon.initialize();
