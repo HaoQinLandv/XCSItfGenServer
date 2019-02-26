@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.foxhis.itf.dao.ICtrlRoomMapper">
+
+
+	<select id="getInternetPmsByTag" parameterType="String" resultType="Internet_pms">
+		select * from internet_pms where changed=#{0}
+	</select>
+
+	<!-- 调用sybase的存储过程 -->
+    <select id="getMasterTempByAccnt" statementType="CALLABLE" parameterType = "String" resultType="Master_temp">    
+        <![CDATA[{call p_hxm_ctrlroom_ostv (#{accnt,mode=IN,jdbcType=VARCHAR})}]]>
+    </select>
+
+	<update id="updateInternetPmsByTag" parameterType="Internet_pms">
+		update internet_pms set changed=#{changed},settime=#{settime} where
+		accnt=#{accnt} and username=#{username}
+	</update>
+
+
+</mapper>
