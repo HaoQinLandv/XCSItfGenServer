@@ -218,6 +218,15 @@ public class DoorCard_Req {
 	public void setMbydate(Date mbydate) {
 		this.mbydate = mbydate;
 	}
+
+	@Override
+	public String toString() {
+		return "DoorCard_Req [id=" + id + ", sta=" + sta + ", accnt=" + accnt + ", roomno=" + roomno + ", name=" + name
+				+ ", arr=" + arr + ", dep=" + dep + ", card_type=" + card_type + ", card_t=" + card_t + ", encoder="
+				+ encoder + ", pc_id=" + pc_id + ", cardno1=" + cardno1 + ", cardno2=" + cardno2 + ", flag1=" + flag1
+				+ ", flag2=" + flag2 + ", flag3=" + flag3 + ", flag4=" + flag4 + ", remark=" + remark + ", date=" + date
+				+ ", cby=" + cby + ", cbydate=" + cbydate + ", mby=" + mby + ", mbydate=" + mbydate + "]";
+	}
 	
 	
 	

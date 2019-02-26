@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.locks.ReentrantLock;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -40,7 +41,7 @@ public class LogFrame {
     private static final String KEY = "lastTimeFileSize";
     private static final String[] extensions = {"log"};
     private boolean isMonitorStar;
-    
+    private ReentrantLock lock = new ReentrantLock();
     
 
 	  /**
@@ -190,7 +191,6 @@ public class LogFrame {
 			}
 		});
 		
-	
 	}
 
 	public boolean isMonitorStar() {
@@ -215,47 +215,14 @@ public class LogFrame {
 		FileFilterImpl filterImpl = new FileFilterImpl(extensions);
 		FileAlterationObserver logFileObserver=new FileAlterationObserver(logDir, filterImpl );
 		logFileObserver.addListener(new FileListener());
-		fileMonitor = new FileAlterationMonitor(2000, logFileObserver);
+		fileMonitor = new FileAlterationMonitor(3000, logFileObserver);
 		//默认启动
 		logFileMonitorStart();
-//		RandomAccessFile randomFile=null;
-//		long lastTimeFileSize = 0; // 初始文件大小
-//		try {
-//			randomFile = new RandomAccessFile(logFile, "r");
-//			randomFile.seek(lastTimeFileSize);
-//			String tmp = null;
-//
-//			while ((tmp = randomFile.readLine()) != null) {
-//				logTextArea.append(new String(tmp.getBytes("iso-8859-1"), "utf-8"));
-//				logTextArea.append("\n");
-//			}
-//		lastTimeFileSize = randomFile.length();//读到最后的大小
-//	
-//		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		finally {
-//			try {
-//				randomFile.close();
-//			} catch (IOException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//		}
-//		
-//		logReaderRunable = new LogReader(logFile,lastTimeFileSize);
-//		if(!logReaderRunable.isFlg())
-//			logReaderRunable.setFlg(true);
-		//初始化线程池
 		
 	}
 	
 	public void logFileMonitorStart()
 	{
-		/*Thread logThread = new Thread(logReader);
-		logThread.start();*/
-//		logReadService.execute(logReaderRunable);
 		try {
 			fileMonitor.start();
 			isMonitorStar = true;
@@ -265,67 +232,7 @@ public class LogFrame {
 			e.printStackTrace();
 		}
 	}
-	
-//	public boolean isLogReaderThreadInterrupt()
-//	{
-//		return logReaderRunable.isFlg();
-//	}
-//	
-	/*class LogReader implements Runnable{
 
-		private File logFile = null;
-		private volatile boolean flg;
-		
-	    public boolean isFlg() {
-			return flg;
-		}
-
-		public void setFlg(boolean flg) {
-			this.flg = flg;
-		}
-
-		private long lastTimeFileSize = 0; // 上次文件大小
-
-	    public LogReader(File logFile,long lasttimefilesize) {
-	        this.logFile = logFile;
-	        this.lastTimeFileSize = lasttimefilesize;
-	    }
-
-		@Override
-		public void run() {
-			// TODO Auto-generated method stub
-			while (flg) {
-				 RandomAccessFile randomFile=null;
-	            try {
-	                randomFile = new RandomAccessFile(logFile, "r");
-	                if(lastTimeFileSize==randomFile.length())
-	                	continue;
-	                randomFile.seek(lastTimeFileSize);
-	                String tmp = null;
-	                
-	                while ((tmp = randomFile.readLine()) != null) {
-	                    logTextArea.append(new String(tmp.getBytes("iso-8859-1"), "utf-8"));
-	                    logTextArea.append("\n");
-	                }
-	                lastTimeFileSize = randomFile.length();
-	                Thread.sleep(2000);
-	            } catch (Exception e) {
-	                // TODO Auto-generated catch block
-	                e.printStackTrace();
-	            }
-	            finally {
-	            	try {
-						randomFile.close();
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				}
-	        }
-
-		}
-	}*/
-	
 	/**
 	 * 文件监听类
 	 * @author Administrator
@@ -357,7 +264,10 @@ public class LogFrame {
 	     */
 	    @Override
 	    public void onFileChange(File file) {
-	    	// To do something
+	    	// To do something 
+	    	//加上安全锁，避免文件更新太快，显示出现重复
+	    	ReentrantLock nLock = lock;
+	    	nLock.lock();
 	    	RandomAccessFile randomFile=null;
 	    	long lastTimeFileSize = cacheMap.get(KEY).longValue();
 	    	try {
@@ -385,7 +295,9 @@ public class LogFrame {
 	    			e.printStackTrace();
 	    		}
 	    	}
-	    	System.out.println("Change file: "+file.getName());
+	    	//System.out.println("Change file: "+file.getName());
+	    	nLock.unlock();
+	    	
 	    }
 
 	    /**
