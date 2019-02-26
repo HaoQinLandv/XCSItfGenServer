@@ -2,6 +2,9 @@ package com.foxhis.itf.entity;
 
 import java.util.Date;
 
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
+
 public class DoorCard_Req {
 	
 	private long id;
@@ -215,7 +218,6 @@ public class DoorCard_Req {
 	public void setMbydate(Date mbydate) {
 		this.mbydate = mbydate;
 	}
-	
 	
 	
 	
