@@ -36,7 +36,6 @@ public class CtrlRoomGenernal implements IGenCommon{
 		this.ctrlRoomImpl =Utils.getItfInstance(ICtrlRoomHandler.class);
 	}
 
-	
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
@@ -52,7 +51,6 @@ public class CtrlRoomGenernal implements IGenCommon{
 		}
 	}
 
-	
 	public synchronized void doTask( )throws Exception
 	{
 		List<Internet_pms> internet_pmses = ctrlRoomMapper.getInternetPmsByTag("F");
@@ -63,7 +61,7 @@ public class CtrlRoomGenernal implements IGenCommon{
 			String tag = internet_pms.getTag();
 			Master_temp master_temp = ctrlRoomMapper.getMasterTempByAccnt(accnt);
 			LOGGER.info(master_temp.toString());
-			if(master_temp!=null)
+			if(master_temp!=null && Utils.isNotBlank(master_temp.getRoomno()))
 			{
 				Map<String, Object> input = new HashMap<String, Object>();
 				input.put("roomno", master_temp.getRoomno());
