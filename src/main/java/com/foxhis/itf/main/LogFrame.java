@@ -279,7 +279,7 @@ public class LogFrame {
 	    			cacheMap.put(KEY, nowTimeFileSize);
 		    		String tmp = null;
 		    		while ((tmp = randomFile.readLine()) != null) {
-		    			logTextArea.append(new String(tmp.getBytes("iso-8859-1"), "utf-8"));
+		    			logTextArea.append(new String(tmp.getBytes("iso-8859-1"), "gbk"));
 		    			logTextArea.append("\n");
 		    		}
 	    		}

@@ -1,154 +1,44 @@
-2019-02-26 10:52:40,027 [ERROR] com.foxhis.itf.main.Main.main(Main.java:106) - 连接数据库失败或者加载实例失败
-com.foxhis.itf.exception.NoHandlerDefException: 获取handler对象为空
-	at com.foxhis.itf.utils.Utils.getItfInstance(Utils.java:119)
-	at com.foxhis.itf.service.impl.CtrlRoomGenernal.initialize(CtrlRoomGenernal.java:22)
-	at com.foxhis.itf.main.Main.main(Main.java:98)
-2019-02-26 10:53:07,860 [ERROR] com.foxhis.itf.utils.PropertiesFileCopyUtils.iniProfile(PropertiesFileCopyUtils.java:40) - 无法创建房控配置[ctrlroom.properties]，请联系系统管理员
-java.lang.NullPointerException
-	at org.apache.commons.io.IOUtils.copyLarge(IOUtils.java:1792)
-	at org.apache.commons.io.IOUtils.copyLarge(IOUtils.java:1769)
-	at org.apache.commons.io.IOUtils.copy(IOUtils.java:1744)
-	at org.apache.commons.io.FileUtils.copyInputStreamToFile(FileUtils.java:1512)
-	at com.foxhis.itf.utils.PropertiesFileCopyUtils.iniProfile(PropertiesFileCopyUtils.java:37)
-	at com.foxhis.itf.ctrlroom.ostv.CtrlRoom_OSTV.<clinit>(CtrlRoom_OSTV.java:38)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
-	at java.lang.Class.newInstance0(Class.java:357)
-	at java.lang.Class.newInstance(Class.java:310)
-	at java.util.ServiceLoader$LazyIterator.next(ServiceLoader.java:356)
-	at java.util.ServiceLoader$1.next(ServiceLoader.java:428)
-	at com.foxhis.itf.utils.Utils.getItfInstance(Utils.java:115)
-	at com.foxhis.itf.service.impl.CtrlRoomGenernal.initialize(CtrlRoomGenernal.java:22)
-	at com.foxhis.itf.main.Main.main(Main.java:98)
-2019-02-26 10:53:07,868 [ERROR] com.foxhis.itf.ctrlroom.ostv.CtrlRoom_OSTV.checkPropertisNotEmtry(CtrlRoom_OSTV.java:98) - 客控配置参数不能为空
-2019-02-26 13:01:18,579 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:300秒
-2019-02-26 13:01:32,736 [ INFO] com.foxhis.itf.main.Main.main(Main.java:120) - 启动客控服务成功...
-2019-02-26 13:03:31,474 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:300秒
-2019-02-26 13:03:31,498 [ INFO] com.foxhis.itf.main.Main.main(Main.java:120) - 启动客控服务成功...
-2019-02-26 13:04:12,425 [ INFO] com.foxhis.itf.main.Main$6.actionPerformed(Main.java:196) - 服务已正常退出..
-2019-02-26 13:04:40,033 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:300秒
-2019-02-26 13:04:40,054 [ INFO] com.foxhis.itf.main.Main.main(Main.java:120) - 启动客控服务成功...
-2019-02-26 13:05:10,920 [ INFO] com.foxhis.itf.main.Main$6.actionPerformed(Main.java:196) - 服务已正常退出..
-2019-02-26 15:19:34,455 [ INFO] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@45a877: startup date [Tue Feb 26 15:19:34 CST 2019]; root of context hierarchy
-2019-02-26 15:19:34,735 [ INFO] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317) - Loading XML bean definitions from class path resource [applicationContext.xml]
-2019-02-26 15:19:36,501 [ INFO] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172) - Loading properties file from URL [file:F:/git/XCSItfGenServer/system.properties]
-2019-02-26 15:19:38,825 [ INFO] org.springframework.jdbc.datasource.DriverManagerDataSource.setDriverClassName(DriverManagerDataSource.java:133) - Loaded JDBC driver: net.sourceforge.jtds.jdbc.Driver
-2019-02-26 15:19:40,049 [ INFO] com.foxhis.itf.ctrlroom.ostv.CtrlRoom_OSTV.<init>(CtrlRoom_OSTV.java:49) - 配置参数为：url=http://ostv.2598.la:81/ostv-data-exchange/owkPmsHttpServlet,supid=supid,hotelid=hotelid,safecode=safecode
-2019-02-26 15:19:40,051 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:300秒
-2019-02-26 15:19:40,059 [ERROR] com.foxhis.itf.service.impl.CtrlRoomGenernal.run(CtrlRoomGenernal.java:48) - 轮询异常：org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.foxhis.itf.dao.ICtrlRoomMapper.getInternetPmsByTag
-2019-02-26 15:19:40,109 [ INFO] com.foxhis.itf.main.Main.main(Main.java:120) - 启动客控服务成功...
-2019-02-26 15:20:48,826 [ INFO] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@16f0472: startup date [Tue Feb 26 15:20:48 CST 2019]; root of context hierarchy
-2019-02-26 15:20:48,874 [ INFO] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317) - Loading XML bean definitions from class path resource [applicationContext.xml]
-2019-02-26 15:20:49,423 [ INFO] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172) - Loading properties file from URL [file:F:/git/XCSItfGenServer/system.properties]
-2019-02-26 15:20:49,802 [ INFO] org.springframework.jdbc.datasource.DriverManagerDataSource.setDriverClassName(DriverManagerDataSource.java:133) - Loaded JDBC driver: net.sourceforge.jtds.jdbc.Driver
-2019-02-26 15:20:50,179 [ INFO] com.foxhis.itf.ctrlroom.ostv.CtrlRoom_OSTV.<init>(CtrlRoom_OSTV.java:49) - 配置参数为：url=http://ostv.2598.la:81/ostv-data-exchange/owkPmsHttpServlet,supid=supid,hotelid=hotelid,safecode=safecode
-2019-02-26 15:20:50,182 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:300秒
-2019-02-26 15:20:50,183 [ERROR] com.foxhis.itf.service.impl.CtrlRoomGenernal.run(CtrlRoomGenernal.java:48) - 轮询异常：org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.foxhis.itf.dao.ICtrlRoomMapper.getInternetPmsByTag
-2019-02-26 15:20:50,205 [ INFO] com.foxhis.itf.main.Main.main(Main.java:120) - 启动客控服务成功...
-2019-02-26 15:21:32,474 [ INFO] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@18d107f: startup date [Tue Feb 26 15:21:32 CST 2019]; root of context hierarchy
-2019-02-26 15:21:32,589 [ INFO] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317) - Loading XML bean definitions from class path resource [applicationContext.xml]
-2019-02-26 15:21:33,059 [ INFO] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172) - Loading properties file from URL [file:F:/git/XCSItfGenServer/system.properties]
-2019-02-26 15:21:33,421 [ INFO] org.springframework.jdbc.datasource.DriverManagerDataSource.setDriverClassName(DriverManagerDataSource.java:133) - Loaded JDBC driver: net.sourceforge.jtds.jdbc.Driver
-2019-02-26 15:21:33,757 [ INFO] com.foxhis.itf.ctrlroom.ostv.CtrlRoom_OSTV.<init>(CtrlRoom_OSTV.java:49) - 配置参数为：url=http://ostv.2598.la:81/ostv-data-exchange/owkPmsHttpServlet,supid=supid,hotelid=hotelid,safecode=safecode
-2019-02-26 15:21:33,759 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:300秒
-2019-02-26 15:21:33,786 [ INFO] com.foxhis.itf.main.Main.main(Main.java:120) - 启动客控服务成功...
-2019-02-26 15:21:34,321 [ INFO] com.foxhis.itf.service.impl.CtrlRoomGenernal.doTask(CtrlRoomGenernal.java:59) - 获取internet_pms待推送数量：9
-2019-02-26 15:21:34,321 [ INFO] com.foxhis.itf.service.impl.CtrlRoomGenernal.doTask(CtrlRoomGenernal.java:61) - Internet_pms [username=0803, tag=1, changed=F, empno=FOX       , date=Thu Apr 13 10:49:12 CST 2017, settime=Thu Apr 13 10:49:12 CST 2017, roomno=null, accnt=F17C300032]
-2019-02-26 15:21:34,378 [ INFO] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317) - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
-2019-02-26 15:21:34,406 [ INFO] org.springframework.jdbc.support.SQLErrorCodesFactory.<init>(SQLErrorCodesFactory.java:127) - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase, Hana]
-2019-02-26 15:21:34,435 [ERROR] com.foxhis.itf.service.impl.CtrlRoomGenernal.run(CtrlRoomGenernal.java:48) - 轮询异常：org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLException: Stored procedure 'p_hxm_ctrlroom_ostv' not found. Specify owner.objectname or use sp_help to check whether the object exists (sp_help may produce lots of output).
-
-### The error may exist in file [F:\git\XCSItfGenServer\target\classes\com\foxhis\itf\mappers\CtrlRoom.xml]
-### The error may involve com.foxhis.itf.dao.ICtrlRoomMapper.getMasterTempByAccnt-Inline
-### The error occurred while setting parameters
-### SQL: {call p_hxm_ctrlroom_ostv (?)}
-### Cause: java.sql.SQLException: Stored procedure 'p_hxm_ctrlroom_ostv' not found. Specify owner.objectname or use sp_help to check whether the object exists (sp_help may produce lots of output).
-
-; bad SQL grammar []; nested exception is java.sql.SQLException: Stored procedure 'p_hxm_ctrlroom_ostv' not found. Specify owner.objectname or use sp_help to check whether the object exists (sp_help may produce lots of output).
-
-2019-02-26 15:24:04,700 [ INFO] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@18d107f: startup date [Tue Feb 26 15:24:04 CST 2019]; root of context hierarchy
-2019-02-26 15:24:04,747 [ INFO] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317) - Loading XML bean definitions from class path resource [applicationContext.xml]
-2019-02-26 15:24:05,257 [ INFO] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172) - Loading properties file from URL [file:F:/git/XCSItfGenServer/system.properties]
-2019-02-26 15:24:05,635 [ INFO] org.springframework.jdbc.datasource.DriverManagerDataSource.setDriverClassName(DriverManagerDataSource.java:133) - Loaded JDBC driver: net.sourceforge.jtds.jdbc.Driver
-2019-02-26 15:24:05,969 [ INFO] com.foxhis.itf.ctrlroom.ostv.CtrlRoom_OSTV.<init>(CtrlRoom_OSTV.java:49) - 配置参数为：url=http://ostv.2598.la:81/ostv-data-exchange/owkPmsHttpServlet,supid=supid,hotelid=hotelid,safecode=safecode
-2019-02-26 15:24:05,971 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:300秒
-2019-02-26 15:24:05,995 [ INFO] com.foxhis.itf.main.Main.main(Main.java:120) - 启动客控服务成功...
-2019-02-26 15:24:06,122 [ INFO] com.foxhis.itf.service.impl.CtrlRoomGenernal.doTask(CtrlRoomGenernal.java:59) - 获取internet_pms待推送数量：9
-2019-02-26 15:24:06,122 [ INFO] com.foxhis.itf.service.impl.CtrlRoomGenernal.doTask(CtrlRoomGenernal.java:61) - Internet_pms [username=0803, tag=1, changed=F, empno=FOX       , date=Thu Apr 13 10:49:12 CST 2017, settime=Thu Apr 13 10:49:12 CST 2017, roomno=null, accnt=F17C300032]
-2019-02-26 15:24:06,133 [ INFO] com.foxhis.itf.service.impl.CtrlRoomGenernal.doTask(CtrlRoomGenernal.java:65) - Master_temp [roomno=null, accnt=F17C300032, hno=null, checkInTime=null, checkOutTime=null, groupId=null, groupName=null, guestName=null, guestTitle=null, idCardTypeCode=null, idCardTypeName=null, guestId=null, genderCode=null, genderName=null, birth=null, nationalityCode=null, nationalityName=null]
-2019-02-26 15:24:06,188 [ERROR] com.foxhis.itf.service.impl.CtrlRoomGenernal.run(CtrlRoomGenernal.java:48) - 轮询异常：java.lang.NullPointerException
-2019-02-26 15:26:52,185 [ INFO] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@360be0: startup date [Tue Feb 26 15:26:52 CST 2019]; root of context hierarchy
-2019-02-26 15:26:52,288 [ INFO] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317) - Loading XML bean definitions from class path resource [applicationContext.xml]
-2019-02-26 15:26:53,045 [ INFO] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172) - Loading properties file from URL [file:F:/git/XCSItfGenServer/system.properties]
-2019-02-26 15:26:53,458 [ INFO] org.springframework.jdbc.datasource.DriverManagerDataSource.setDriverClassName(DriverManagerDataSource.java:133) - Loaded JDBC driver: net.sourceforge.jtds.jdbc.Driver
-2019-02-26 15:26:53,896 [ INFO] com.foxhis.itf.ctrlroom.ostv.CtrlRoom_OSTV.<init>(CtrlRoom_OSTV.java:49) - 配置参数为：url=http://ostv.2598.la:81/ostv-data-exchange/owkPmsHttpServlet,supid=supid,hotelid=hotelid,safecode=safecode
-2019-02-26 15:26:53,897 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:300秒
-2019-02-26 15:26:53,931 [ INFO] com.foxhis.itf.main.Main.main(Main.java:120) - 启动客控服务成功...
-2019-02-26 15:26:54,095 [ INFO] com.foxhis.itf.service.impl.CtrlRoomGenernal.doTask(CtrlRoomGenernal.java:59) - 获取internet_pms待推送数量：9
-2019-02-26 15:26:54,095 [ INFO] com.foxhis.itf.service.impl.CtrlRoomGenernal.doTask(CtrlRoomGenernal.java:61) - Internet_pms [username=0803, tag=1, changed=F, empno=FOX       , date=Thu Apr 13 10:49:12 CST 2017, settime=Thu Apr 13 10:49:12 CST 2017, roomno=null, accnt=F17C300032]
-2019-02-26 15:26:54,111 [ INFO] com.foxhis.itf.service.impl.CtrlRoomGenernal.doTask(CtrlRoomGenernal.java:65) - Master_temp [roomno=null, accnt=F17C300032, hno=null, checkInTime=null, checkOutTime=null, groupId=null, groupName=null, guestName=null, guestTitle=null, idCardTypeCode=null, idCardTypeName=null, guestId=null, genderCode=null, genderName=null, birth=null, nationalityCode=null, nationalityName=null]
-2019-02-26 15:26:54,124 [ERROR] com.foxhis.itf.service.impl.CtrlRoomGenernal.run(CtrlRoomGenernal.java:48) - 轮询异常：java.lang.NullPointerException
-2019-02-26 15:27:52,284 [ INFO] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1263db: startup date [Tue Feb 26 15:27:52 CST 2019]; root of context hierarchy
-2019-02-26 15:27:52,425 [ INFO] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317) - Loading XML bean definitions from class path resource [applicationContext.xml]
-2019-02-26 15:27:53,290 [ INFO] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172) - Loading properties file from URL [file:F:/git/XCSItfGenServer/system.properties]
-2019-02-26 15:27:55,852 [ INFO] org.springframework.jdbc.datasource.DriverManagerDataSource.setDriverClassName(DriverManagerDataSource.java:133) - Loaded JDBC driver: net.sourceforge.jtds.jdbc.Driver
-2019-02-26 15:28:21,091 [ INFO] com.foxhis.itf.ctrlroom.ostv.CtrlRoom_OSTV.<init>(CtrlRoom_OSTV.java:49) - 配置参数为：url=http://ostv.2598.la:81/ostv-data-exchange/owkPmsHttpServlet,supid=supid,hotelid=hotelid,safecode=safecode
-2019-02-26 15:28:21,101 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:300秒
-2019-02-26 15:28:21,185 [ INFO] com.foxhis.itf.main.Main.main(Main.java:120) - 启动客控服务成功...
-2019-02-26 15:28:25,910 [ INFO] com.foxhis.itf.service.impl.CtrlRoomGenernal.doTask(CtrlRoomGenernal.java:59) - 获取internet_pms待推送数量：9
-2019-02-26 15:28:25,913 [ INFO] com.foxhis.itf.service.impl.CtrlRoomGenernal.doTask(CtrlRoomGenernal.java:61) - Internet_pms [username=0803, tag=1, changed=F, empno=FOX       , date=Thu Apr 13 10:49:12 CST 2017, settime=Thu Apr 13 10:49:12 CST 2017, roomno=null, accnt=F17C300032]
-2019-02-26 15:28:30,083 [ INFO] com.foxhis.itf.service.impl.CtrlRoomGenernal.doTask(CtrlRoomGenernal.java:65) - Master_temp [roomno=null, accnt=F17C300032, hno=null, checkInTime=null, checkOutTime=null, groupId=null, groupName=null, guestName=null, guestTitle=null, idCardTypeCode=null, idCardTypeName=null, guestId=null, genderCode=null, genderName=null, birth=null, nationalityCode=null, nationalityName=null]
-2019-02-26 15:28:30,250 [ERROR] com.foxhis.itf.service.impl.CtrlRoomGenernal.run(CtrlRoomGenernal.java:48) - 轮询异常：java.lang.NullPointerException
-2019-02-26 15:30:20,969 [ INFO] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@16f0472: startup date [Tue Feb 26 15:30:20 CST 2019]; root of context hierarchy
-2019-02-26 15:30:21,017 [ INFO] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317) - Loading XML bean definitions from class path resource [applicationContext.xml]
-2019-02-26 15:30:21,542 [ INFO] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172) - Loading properties file from URL [file:F:/git/XCSItfGenServer/system.properties]
-2019-02-26 15:30:21,914 [ INFO] org.springframework.jdbc.datasource.DriverManagerDataSource.setDriverClassName(DriverManagerDataSource.java:133) - Loaded JDBC driver: net.sourceforge.jtds.jdbc.Driver
-2019-02-26 15:30:22,253 [ INFO] com.foxhis.itf.ctrlroom.ostv.CtrlRoom_OSTV.<init>(CtrlRoom_OSTV.java:49) - 配置参数为：url=http://ostv.2598.la:81/ostv-data-exchange/owkPmsHttpServlet,supid=supid,hotelid=hotelid,safecode=safecode
-2019-02-26 15:30:22,254 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:300秒
-2019-02-26 15:30:22,278 [ INFO] com.foxhis.itf.main.Main.main(Main.java:120) - 启动客控服务成功...
-2019-02-26 15:30:22,419 [ INFO] com.foxhis.itf.service.impl.CtrlRoomGenernal.doTask(CtrlRoomGenernal.java:59) - 获取internet_pms待推送数量：1
-2019-02-26 15:30:22,420 [ INFO] com.foxhis.itf.service.impl.CtrlRoomGenernal.doTask(CtrlRoomGenernal.java:61) - Internet_pms [username=0803, tag=1, changed=F, empno=FOX       , date=Thu Apr 13 10:49:12 CST 2017, settime=Thu Apr 13 10:49:12 CST 2017, roomno=null, accnt=F19A290004]
-2019-02-26 15:30:22,431 [ INFO] com.foxhis.itf.service.impl.CtrlRoomGenernal.doTask(CtrlRoomGenernal.java:65) - Master_temp [roomno=0101 , accnt=F19A290004, hno=6000003   , checkInTime=Wed Jan 30 04:16:39 CST 2019, checkOutTime=Thu Jan 31 12:00:00 CST 2019, groupId=       , groupName=null, guestName=打               , guestTitle=先生             , idCardTypeCode=                 , idCardTypeName=null, guestId=                 , genderCode=1, genderName=男, birth=null, nationalityCode=HA, nationalityName=汉族             ]
-2019-02-26 15:30:22,747 [ INFO] com.foxhis.itf.utils.HttpUtils.doPost(HttpUtils.java:59) - 请求的json数据{"groupId":"","checkInRoom":"true","roomBuildingName":"","guestinfo":[{"birthday":"","guestName":"打               ","visaValid":"","iDCardTypeId":"","provinceCode":"","cityCode":"","countryCode":"","id":"                 ","visalNo":"","visaTypeId":"","nationality":"","address":"","iDCardNo":"","gender":"1","salutation":"男"}],"roomFloorCode":"","roomNo":"0101 ","action":"CheckIn","checkOutTime":"2019-01-31 12:00:00","roomTypeName":"","roomFloorName":"","checkInTime":"2019-01-30 04:16:39","roomBuildingCode":""}
-2019-02-26 15:30:22,761 [ INFO] com.foxhis.itf.utils.HttpUtils.doPost(HttpUtils.java:73) - 请求返回20
-2019-02-26 15:30:22,769 [ INFO] com.foxhis.itf.service.impl.CtrlRoomGenernal.doTask(CtrlRoomGenernal.java:111) - 更新结果：成功
-2019-02-26 15:35:22,272 [ INFO] com.foxhis.itf.service.impl.CtrlRoomGenernal.doTask(CtrlRoomGenernal.java:59) - 获取internet_pms待推送数量：0
-2019-02-26 15:35:50,298 [ INFO] com.foxhis.itf.main.Main$6.actionPerformed(Main.java:196) - 服务已正常退出..
-2019-02-26 15:39:35,059 [ INFO] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@18d107f: startup date [Tue Feb 26 15:39:35 CST 2019]; root of context hierarchy
-2019-02-26 15:39:35,131 [ INFO] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317) - Loading XML bean definitions from class path resource [applicationContext.xml]
-2019-02-26 15:39:35,678 [ INFO] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172) - Loading properties file from URL [file:F:/git/XCSItfGenServer/system.properties]
-2019-02-26 15:39:36,061 [ INFO] org.springframework.jdbc.datasource.DriverManagerDataSource.setDriverClassName(DriverManagerDataSource.java:133) - Loaded JDBC driver: net.sourceforge.jtds.jdbc.Driver
-2019-02-26 15:39:36,414 [ INFO] com.foxhis.itf.ctrlroom.ostv.CtrlRoom_OSTV.<init>(CtrlRoom_OSTV.java:49) - 配置参数为：url=http://ostv.2598.la:81/ostv-data-exchange/owkPmsHttpServlet,supid=supid,hotelid=hotelid,safecode=safecode
-2019-02-26 15:39:36,416 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:300秒
-2019-02-26 15:39:36,441 [ INFO] com.foxhis.itf.main.Main.main(Main.java:120) - 启动客控服务成功...
-2019-02-26 15:39:36,565 [ INFO] com.foxhis.itf.service.impl.CtrlRoomGenernal.doTask(CtrlRoomGenernal.java:59) - 获取internet_pms待推送数量：1
-2019-02-26 15:39:36,565 [ INFO] com.foxhis.itf.service.impl.CtrlRoomGenernal.doTask(CtrlRoomGenernal.java:61) - Internet_pms [username=0803, tag=1, changed=F, empno=FOX       , date=Thu Apr 13 10:49:12 CST 2017, settime=Tue Feb 26 15:30:22 CST 2019, roomno=null, accnt=F19A290004]
-2019-02-26 15:39:36,576 [ INFO] com.foxhis.itf.service.impl.CtrlRoomGenernal.doTask(CtrlRoomGenernal.java:65) - Master_temp [roomno=0101 , accnt=F19A290004, hno=6000003   , checkInTime=Wed Jan 30 04:16:39 CST 2019, checkOutTime=Thu Jan 31 12:00:00 CST 2019, groupId=       , groupName=null, guestName=打               , guestTitle=先生             , idCardTypeCode=                 , idCardTypeName=null, guestId=                 , genderCode=1, genderName=男, birth=null, nationalityCode=HA, nationalityName=汉族             ]
-2019-02-26 15:39:36,687 [ INFO] com.foxhis.itf.utils.HttpUtils.doPost(HttpUtils.java:59) - 请求的json数据{"groupId":"","checkInRoom":"true","roomBuildingName":"","guestinfo":[{"birthday":"","guestName":"打               ","visaValid":"","iDCardTypeId":"","provinceCode":"","cityCode":"","countryCode":"","id":"                 ","visalNo":"","visaTypeId":"","nationality":"","address":"","iDCardNo":"","gender":"1","salutation":"男"}],"roomFloorCode":"","roomNo":"0101 ","action":"CheckIn","checkOutTime":"2019-01-31 12:00:00","roomTypeName":"","roomFloorName":"","checkInTime":"2019-01-30 04:16:39","roomBuildingCode":""}
-2019-02-26 15:39:36,698 [ INFO] com.foxhis.itf.utils.HttpUtils.doPost(HttpUtils.java:73) - 请求返回20
-2019-02-26 15:39:36,698 [ INFO] com.foxhis.itf.ctrlroom.ostv.CtrlRoom_OSTV.ctrlroomCkin(CtrlRoom_OSTV.java:66) - {result=false, msg=厂商标志不存在}
-2019-02-26 15:39:36,712 [ INFO] com.foxhis.itf.service.impl.CtrlRoomGenernal.doTask(CtrlRoomGenernal.java:111) - 更新结果：成功
-2019-02-26 15:42:38,011 [ INFO] com.foxhis.itf.main.Main$6.actionPerformed(Main.java:196) - 服务已正常退出..
-2019-02-26 15:53:52,345 [ INFO] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@18d107f: startup date [Tue Feb 26 15:53:52 CST 2019]; root of context hierarchy
-2019-02-26 15:53:52,440 [ INFO] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317) - Loading XML bean definitions from class path resource [applicationContext.xml]
-2019-02-26 15:53:52,968 [ INFO] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172) - Loading properties file from URL [file:F:/git/XCSItfGenServer/system.properties]
-2019-02-26 15:53:53,350 [ INFO] org.springframework.jdbc.datasource.DriverManagerDataSource.setDriverClassName(DriverManagerDataSource.java:133) - Loaded JDBC driver: net.sourceforge.jtds.jdbc.Driver
-2019-02-26 15:53:53,761 [ INFO] com.foxhis.itf.ctrlroom.ostv.CtrlRoom_OSTV.<init>(CtrlRoom_OSTV.java:49) - 配置参数为：url=http://ostv.2598.la:81/ostv-data-exchange/owkPmsHttpServlet,supid=supid,hotelid=hotelid,safecode=safecode
-2019-02-26 15:53:53,763 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:300秒
-2019-02-26 15:53:53,785 [ INFO] com.foxhis.itf.main.Main.main(Main.java:120) - 启动客控服务成功...
-2019-02-26 15:53:53,950 [ INFO] com.foxhis.itf.service.impl.CtrlRoomGenernal.doTask(CtrlRoomGenernal.java:59) - 获取internet_pms待推送数量：2
-2019-02-26 15:53:53,950 [ INFO] com.foxhis.itf.service.impl.CtrlRoomGenernal.doTask(CtrlRoomGenernal.java:61) - Internet_pms [username=0801, tag=1, changed=F, empno=FOX       , date=Sun Feb 03 00:00:00 CST 2019, settime=Sun Feb 03 00:00:00 CST 2019, roomno=null, accnt=F19A290001]
-2019-02-26 15:53:53,964 [ INFO] com.foxhis.itf.service.impl.CtrlRoomGenernal.doTask(CtrlRoomGenernal.java:65) - Master_temp [roomno=0401 , accnt=F19A290001, hno=6000000   , checkInTime=Tue Jan 29 11:00:50 CST 2019, checkOutTime=Thu Jan 31 12:00:00 CST 2019, groupId=       , groupName=null, guestName=*Quick Checkin*  , guestTitle=先生             , idCardTypeCode=                 , idCardTypeName=null, guestId=                 , genderCode=1, genderName=男, birth=null, nationalityCode=  , nationalityName=null]
-2019-02-26 15:53:54,066 [ INFO] com.foxhis.itf.utils.HttpUtils.doPost(HttpUtils.java:59) - 请求的json数据{"groupId":"","checkInRoom":"true","roomBuildingName":"","guestinfo":[{"birthday":"","guestName":"*Quick Checkin*  ","visaValid":"","iDCardTypeId":"","provinceCode":"","cityCode":"","countryCode":"","id":"                 ","visalNo":"","visaTypeId":"","nationality":"","address":"","iDCardNo":"","gender":"1","salutation":"男"}],"roomFloorCode":"","roomNo":"0401 ","action":"CheckIn","checkOutTime":"2019-01-31 12:00:00","roomTypeName":"","roomFloorName":"","checkInTime":"2019-01-29 11:00:50","roomBuildingCode":""}
-2019-02-26 15:53:54,083 [ INFO] com.foxhis.itf.utils.HttpUtils.doPost(HttpUtils.java:73) - 请求返回20
-2019-02-26 15:53:54,083 [ INFO] com.foxhis.itf.ctrlroom.ostv.CtrlRoom_OSTV.ctrlroomCkin(CtrlRoom_OSTV.java:66) - {result=false, msg=厂商标志不存在}
-2019-02-26 15:53:54,096 [ INFO] com.foxhis.itf.service.impl.CtrlRoomGenernal.doTask(CtrlRoomGenernal.java:111) - 更新结果：成功
-2019-02-26 15:53:54,096 [ INFO] com.foxhis.itf.service.impl.CtrlRoomGenernal.doTask(CtrlRoomGenernal.java:61) - Internet_pms [username=0803, tag=1, changed=F, empno=FOX       , date=Sun Feb 03 00:00:00 CST 2019, settime=Tue Feb 26 15:39:36 CST 2019, roomno=null, accnt=F19A290004]
-2019-02-26 15:53:54,105 [ INFO] com.foxhis.itf.service.impl.CtrlRoomGenernal.doTask(CtrlRoomGenernal.java:65) - Master_temp [roomno=0101 , accnt=F19A290004, hno=6000003   , checkInTime=Wed Jan 30 04:16:39 CST 2019, checkOutTime=Thu Jan 31 12:00:00 CST 2019, groupId=       , groupName=null, guestName=打               , guestTitle=先生             , idCardTypeCode=                 , idCardTypeName=null, guestId=                 , genderCode=1, genderName=男, birth=null, nationalityCode=HA, nationalityName=汉族             ]
-2019-02-26 15:53:54,106 [ INFO] com.foxhis.itf.utils.HttpUtils.doPost(HttpUtils.java:59) - 请求的json数据{"groupId":"","checkInRoom":"true","roomBuildingName":"","guestinfo":[{"birthday":"","guestName":"打               ","visaValid":"","iDCardTypeId":"","provinceCode":"","cityCode":"","countryCode":"","id":"                 ","visalNo":"","visaTypeId":"","nationality":"","address":"","iDCardNo":"","gender":"1","salutation":"男"}],"roomFloorCode":"","roomNo":"0101 ","action":"CheckIn","checkOutTime":"2019-01-31 12:00:00","roomTypeName":"","roomFloorName":"","checkInTime":"2019-01-30 04:16:39","roomBuildingCode":""}
-2019-02-26 15:53:54,117 [ INFO] com.foxhis.itf.utils.HttpUtils.doPost(HttpUtils.java:73) - 请求返回20
-2019-02-26 15:53:54,117 [ INFO] com.foxhis.itf.ctrlroom.ostv.CtrlRoom_OSTV.ctrlroomCkin(CtrlRoom_OSTV.java:66) - {result=false, msg=厂商标志不存在}
-2019-02-26 15:53:54,126 [ INFO] com.foxhis.itf.service.impl.CtrlRoomGenernal.doTask(CtrlRoomGenernal.java:111) - 更新结果：成功
+2019-03-07 10:47:19,700 [ INFO] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@ad3ba4: startup date [Thu Mar 07 10:47:19 CST 2019]; root of context hierarchy
+2019-03-07 10:47:20,074 [ INFO] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317) - Loading XML bean definitions from class path resource [applicationContext.xml]
+2019-03-07 10:47:22,426 [ INFO] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172) - Loading properties file from URL [file:F:/git/XCSItfGenServer/system.properties]
+2019-03-07 10:47:24,021 [ INFO] org.springframework.jdbc.datasource.DriverManagerDataSource.setDriverClassName(DriverManagerDataSource.java:133) - Loaded JDBC driver: net.sourceforge.jtds.jdbc.Driver
+2019-03-07 10:47:25,263 [ INFO] com.foxhis.itf.ctrlroom.ostv.CtrlRoom_OSTV.<init>(CtrlRoom_OSTV.java:49) - 配置参数为：url=http://ostv.2598.la:81/ostv-data-exchange/owkPmsHttpServlet,supid=supid,hotelid=hotelid,safecode=safecode
+2019-03-07 10:47:25,293 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:300秒
+2019-03-07 10:47:25,386 [ INFO] com.foxhis.itf.main.Main.main(Main.java:120) - 启动客控服务成功...
+2019-03-07 10:47:25,974 [ INFO] com.foxhis.itf.service.impl.CtrlRoomGenernal.doTask(CtrlRoomGenernal.java:57) - 获取internet_pms待推送数量：0
+2019-03-07 10:56:30,501 [ INFO] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@18d107f: startup date [Thu Mar 07 10:56:30 CST 2019]; root of context hierarchy
+2019-03-07 10:56:30,615 [ INFO] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317) - Loading XML bean definitions from class path resource [applicationContext.xml]
+2019-03-07 10:56:31,126 [ INFO] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172) - Loading properties file from URL [file:F:/git/XCSItfGenServer/system.properties]
+2019-03-07 10:56:32,117 [ INFO] org.springframework.jdbc.datasource.DriverManagerDataSource.setDriverClassName(DriverManagerDataSource.java:133) - Loaded JDBC driver: net.sourceforge.jtds.jdbc.Driver
+2019-03-07 10:56:32,459 [ INFO] com.foxhis.itf.ctrlroom.ostv.CtrlRoom_OSTV.<init>(CtrlRoom_OSTV.java:49) - 配置参数为：url=http://ostv.2598.la:81/ostv-data-exchange/owkPmsHttpServlet,supid=supid,hotelid=hotelid,safecode=safecode
+2019-03-07 10:56:32,462 [ INFO] com.foxhis.itf.main.Main.main(Main.java:101) - 打开循环调度器成功,循环时间为:300秒
+2019-03-07 10:56:32,483 [ INFO] com.foxhis.itf.main.Main.main(Main.java:121) - 启动客控服务成功...
+2019-03-07 10:56:32,697 [ INFO] com.foxhis.itf.service.impl.CtrlRoomGenernal.doTask(CtrlRoomGenernal.java:57) - 获取internet_pms待推送数量：0
+2019-03-07 10:56:38,248 [ INFO] com.foxhis.itf.main.Main$6.actionPerformed(Main.java:202) - 服务已正常退出..
+2019-03-07 10:56:57,536 [ INFO] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@16f0472: startup date [Thu Mar 07 10:56:57 CST 2019]; root of context hierarchy
+2019-03-07 10:56:57,582 [ INFO] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317) - Loading XML bean definitions from class path resource [applicationContext.xml]
+2019-03-07 10:56:58,059 [ INFO] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172) - Loading properties file from URL [file:F:/git/XCSItfGenServer/system.properties]
+2019-03-07 10:56:58,447 [ INFO] org.springframework.jdbc.datasource.DriverManagerDataSource.setDriverClassName(DriverManagerDataSource.java:133) - Loaded JDBC driver: net.sourceforge.jtds.jdbc.Driver
+2019-03-07 10:56:58,771 [ INFO] com.foxhis.itf.ctrlroom.ostv.CtrlRoom_OSTV.<init>(CtrlRoom_OSTV.java:49) - 配置参数为：url=http://ostv.2598.la:81/ostv-data-exchange/owkPmsHttpServlet,supid=supid,hotelid=hotelid,safecode=safecode
+2019-03-07 10:56:58,772 [ INFO] com.foxhis.itf.main.Main.main(Main.java:101) - 打开循环调度器成功,循环时间为:300秒
+2019-03-07 10:56:58,791 [ INFO] com.foxhis.itf.main.Main.main(Main.java:121) - 启动客控服务成功...
+2019-03-07 10:56:58,933 [ INFO] com.foxhis.itf.service.impl.CtrlRoomGenernal.doTask(CtrlRoomGenernal.java:57) - 获取internet_pms待推送数量：0
+2019-03-07 10:57:03,041 [ INFO] com.foxhis.itf.main.Main$6.actionPerformed(Main.java:202) - 服务已正常退出..
+2019-03-07 13:25:43,143 [ INFO] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@182f0db: startup date [Thu Mar 07 13:25:43 CST 2019]; root of context hierarchy
+2019-03-07 13:25:43,288 [ INFO] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317) - Loading XML bean definitions from class path resource [applicationContext.xml]
+2019-03-07 13:25:45,893 [ INFO] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172) - Loading properties file from URL [file:F:/git/XCSItfGenServer/system.properties]
+2019-03-07 13:25:47,889 [ INFO] org.springframework.jdbc.datasource.DriverManagerDataSource.setDriverClassName(DriverManagerDataSource.java:133) - Loaded JDBC driver: net.sourceforge.jtds.jdbc.Driver
+2019-03-07 13:25:49,747 [ INFO] com.foxhis.itf.ctrlroom.ostv.CtrlRoom_OSTV.<init>(CtrlRoom_OSTV.java:49) - ���ò���Ϊ��url=http://ostv.2598.la:81/ostv-data-exchange/owkPmsHttpServlet,supid=supid,hotelid=hotelid,safecode=safecode
+2019-03-07 13:25:49,751 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - ��ѭ���������ɹ�,ѭ��ʱ��Ϊ:300��
+2019-03-07 13:25:49,796 [ INFO] com.foxhis.itf.main.Main.main(Main.java:120) - �����Ϳط���ɹ�...
+2019-03-07 13:25:50,882 [ INFO] com.foxhis.itf.service.impl.CtrlRoomGenernal.doTask(CtrlRoomGenernal.java:57) - ��ȡinternet_pms������������0
+2019-03-07 13:26:03,237 [ INFO] com.foxhis.itf.main.Main$6.actionPerformed(Main.java:196) - �����������˳�..
+2019-03-07 13:31:59,974 [ INFO] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@16f0472: startup date [Thu Mar 07 13:31:59 CST 2019]; root of context hierarchy
+2019-03-07 13:32:00,051 [ INFO] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317) - Loading XML bean definitions from class path resource [applicationContext.xml]
+2019-03-07 13:32:00,520 [ INFO] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172) - Loading properties file from URL [file:F:/git/XCSItfGenServer/system.properties]
+2019-03-07 13:32:00,952 [ INFO] org.springframework.jdbc.datasource.DriverManagerDataSource.setDriverClassName(DriverManagerDataSource.java:133) - Loaded JDBC driver: net.sourceforge.jtds.jdbc.Driver
+2019-03-07 13:32:01,280 [ INFO] com.foxhis.itf.ctrlroom.ostv.CtrlRoom_OSTV.<init>(CtrlRoom_OSTV.java:49) - 配置参数为：url=http://ostv.2598.la:81/ostv-data-exchange/owkPmsHttpServlet,supid=supid,hotelid=hotelid,safecode=safecode
+2019-03-07 13:32:01,281 [ INFO] com.foxhis.itf.main.Main.main(Main.java:100) - 打开循环调度器成功,循环时间为:300秒
+2019-03-07 13:32:01,303 [ INFO] com.foxhis.itf.main.Main.main(Main.java:120) - 启动客控服务成功...
+2019-03-07 13:32:01,410 [ INFO] com.foxhis.itf.service.impl.CtrlRoomGenernal.doTask(CtrlRoomGenernal.java:57) - 获取internet_pms待推送数量：0
+2019-03-07 13:32:04,072 [ INFO] com.foxhis.itf.main.Main$6.actionPerformed(Main.java:196) - 服务已正常退出..
