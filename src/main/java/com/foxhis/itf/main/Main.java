@@ -1,13 +1,10 @@
 package com.foxhis.itf.main;
 
-import java.awt.AWTException;
 import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.Image;
-import java.awt.MenuItem;
-import java.awt.PopupMenu;
 import java.awt.SystemTray;
 import java.awt.Toolkit;
-import java.awt.TrayIcon;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -21,7 +18,9 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 import javax.swing.ImageIcon;
+import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
+import javax.swing.JPopupMenu;
 import javax.swing.UIManager;
 
 import org.apache.log4j.Logger;
@@ -50,9 +49,10 @@ public class Main {
 	private static LogFrame logFrame;
 	private static String SEVNAME;
 	private static String handler;
+	
 
 	public static void main(String[] args) {
-		System.setProperty("file.encoding", "UTF-8");
+		System.setProperty("file.encoding", Utils.DEFAULT_CHARSET);
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (Exception e) {
@@ -79,6 +79,7 @@ public class Main {
 
 		try {
 			properties.load(new FileInputStream(new File(System.getProperty("user.dir"), "system.properties")));
+			//			properties.load(new BufferedReader(new InputStreamReader(new FileInputStream(new File(System.getProperty("user.dir"), "system.properties")), DEFAULT_CHARSET)));
 		} catch (Exception e) {
 			LOGGER.error("加载配置文件失败", e);
 			System.exit(-1);
@@ -109,7 +110,7 @@ public class Main {
 		// 初始化日志窗口
 		logFrame = LogFrame.getInstance();
 		SEVNAME = Utils.getServerNameByHandler(handler);
-		
+
 		// 加上系统托盘
 		EventQueue.invokeLater(new Runnable() {
 
@@ -121,82 +122,32 @@ public class Main {
 	}
 
 	private static void createSystemTray() {
-		PopupMenu popupMenu = new PopupMenu();
+		TrayActionListener trayListener  = new TrayActionListener();
+		JPopupMenu popupMenu = new JPopupMenu();
+		popupMenu.setFont(new Font("Default", 0, 12));
 		// 关于菜单
-		MenuItem aboutItem = new MenuItem();
-		aboutItem.setLabel("关于");
-		aboutItem.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				// to do 关闭数据库
-				JOptionPane.showMessageDialog(null, MessageFormat.format("这是XCS{0}独立平台服务端V1.0", SEVNAME), "关于",
-						JOptionPane.INFORMATION_MESSAGE);
-			}
-		});
+		JMenuItem aboutItem = new JMenuItem("关于");
+		aboutItem.setActionCommand("about");
+		aboutItem.addActionListener(trayListener);
 		popupMenu.add(aboutItem);
-
 		// 日志菜单
-		MenuItem logItem = new MenuItem();
-		logItem.setLabel("日志");
-		logItem.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				//
-				//				if (!logFrame.isLogReaderThreadInterrupt()) {
-				//					logFrame.setLogReaderThreadInterrupt(true);
-				//					logFrame.startLogThread();
-				//				}
-
-				if(!logFrame.isMonitorStar())logFrame.logFileMonitorStart();
-				logFrame.getFrame().setVisible(true);
-
-			}
-		});
+		JMenuItem logItem = new JMenuItem("日志");
+		logItem.setActionCommand("log");
+		logItem.addActionListener(trayListener);
 		popupMenu.add(logItem);
+		
 		if (Utils.isNotBlank(handler) && "sms".equalsIgnoreCase(handler)) {
 			// 查询余额菜单
-			MenuItem balanceItem = new MenuItem();
-			balanceItem.setLabel("查询短信余额");
-			balanceItem.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					ISMSHandler ismsHandler = null;
-					try {
-						ismsHandler = Utils.getItfInstance(ISMSHandler.class);
-					} catch (Exception e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-					if (ismsHandler != null) {
-						Map<String, Object> re = ismsHandler.getBalance();
-						if ((Boolean) re.get("result")) {
-							String balance = (String) re.get("balance");
-							JOptionPane.showMessageDialog(null, "当前短信余额为：" + balance);
-							LOGGER.info("当前短信余额为：" + balance);
-						} else {
-							String msg = (String) re.get("msg");
-							JOptionPane.showMessageDialog(null, "查询余额错误：" + msg);
-							LOGGER.info("查询余额错误：" + msg);
-						}
-					} else {
-						JOptionPane.showMessageDialog(null, "获取短信对象异常，请查看日志文件");
-					}
-				}
-			});
+			JMenuItem balanceItem = new JMenuItem("查询短信余额");
+			balanceItem.setActionCommand("smsbalance");	
+			balanceItem.addActionListener(trayListener);
 			popupMenu.add(balanceItem);
 		}
 
 		// 退出菜单
-		MenuItem exitItem = new MenuItem();
-		exitItem.setLabel("退出");
-		exitItem.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				// to do 关闭数据库
-				if (scheduledpools != null && !scheduledpools.isShutdown())
-					scheduledpools.shutdown();
-				if (logFrame != null)
-					logFrame.dispose();
-				LOGGER.info("服务已正常退出..");
-				System.exit(0);
-			}
-		});
+		JMenuItem exitItem = new JMenuItem("退出");
+		exitItem.setActionCommand("exit");
+		exitItem.addActionListener(trayListener);	
 		popupMenu.add(exitItem);
 
 		// 加载logo
@@ -205,15 +156,97 @@ public class Main {
 			image = new ImageIcon(Toolkit.getDefaultToolkit().getImage(Main.class.getResource("logo.png"))).getImage();
 		} catch (Exception e) {
 		}
-		TrayIcon trayIcon = new TrayIcon(image, MessageFormat.format("{0}接口服务器", SEVNAME));
-		trayIcon.setPopupMenu(popupMenu);
-		try {
-			SystemTray.getSystemTray().add(trayIcon);
-		} catch (AWTException e) {
-			LOGGER.error("系统不支持系统托盘");
-			System.exit(-1);
-		}
+		//加载托盘
+		addTray(popupMenu, MessageFormat.format("{0}接口服务器", SEVNAME), image);
+		
+		//		TrayIcon trayIcon = new TrayIcon(image, MessageFormat.format("{0}接口服务器", SEVNAME));
+		//		trayIcon.setPopupMenu(popupMenu);
+		
+		//		try {
+		//			SystemTray.getSystemTray().add(trayIcon);
+		//		} catch (AWTException e) {
+		//			LOGGER.error("系统不支持系统托盘");
+		//			System.exit(-1);
+		//		}
 
+	}
+
+	private static void trayAbout()
+	{
+		JOptionPane.showMessageDialog(null, MessageFormat.format("这是XCS{0}独立平台服务端V1.0", SEVNAME), "关于",
+				JOptionPane.INFORMATION_MESSAGE);
+	}
+	private static void trayLog()
+	{
+		if(!logFrame.isMonitorStar())logFrame.logFileMonitorStart();
+		logFrame.getFrame().setVisible(true);
+	}
+	private static void trayExit()
+	{
+		if (scheduledpools != null && !scheduledpools.isShutdown())
+			scheduledpools.shutdown();
+		if (logFrame != null)
+			logFrame.dispose();
+		LOGGER.info("服务已正常退出..");
+		System.exit(0);
+	}
+	
+	private static void trayBalance()
+	{
+		ISMSHandler ismsHandler = null;
+		try {
+			ismsHandler = Utils.getItfInstance(ISMSHandler.class);
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		if (ismsHandler != null) {
+			Map<String, Object> re = ismsHandler.getBalance();
+			if ((Boolean) re.get("result")) {
+				String balance = (String) re.get("balance");
+				JOptionPane.showMessageDialog(null, "当前短信余额为：" + balance);
+				LOGGER.info("当前短信余额为：" + balance);
+			} else {
+				String msg = (String) re.get("msg");
+				JOptionPane.showMessageDialog(null, "查询余额错误：" + msg);
+				LOGGER.info("查询余额错误：" + msg);
+			}
+		} else {
+			JOptionPane.showMessageDialog(null, "获取短信对象异常，请查看日志文件");
+		}
+	
+	}
+	
+	static class TrayActionListener implements ActionListener {
+	    TrayActionListener() {
+	    }
+
+	    public void actionPerformed(ActionEvent e) {
+	      if ("log".equals(e.getActionCommand()))
+	    	trayLog();
+	      else if ("about".equals(e.getActionCommand()))
+	        trayAbout();
+	      else if ("exit".equals(e.getActionCommand()))
+	        trayExit();
+	      else if("smsbalance".equals(e.getActionCommand()))
+            trayBalance();
+	    }
+	  } 
+	
+	protected static void addTray(JPopupMenu popup, String title, Image image) {
+		
+		JTrayIcon trayIcon = null;
+		if (SystemTray.isSupported()) {
+			SystemTray tray = SystemTray.getSystemTray();
+			trayIcon = new JTrayIcon(image, title, popup);
+			try {
+				tray.add(trayIcon);
+			} catch (Exception e1) {
+				LOGGER.error("添加系统托盘错误", e1);
+			}
+		} else {
+			LOGGER.error("系统不支持系统托盘");
+		}
 	}
 
 	private static boolean checkRunning() {

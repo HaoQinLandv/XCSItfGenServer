@@ -27,6 +27,8 @@ import org.apache.commons.io.monitor.FileAlterationMonitor;
 import org.apache.commons.io.monitor.FileAlterationObserver;
 import org.springframework.stereotype.Component;
 
+import com.foxhis.itf.utils.Utils;
+
 @Component("logframe")
 public class LogFrame {
 
@@ -55,6 +57,7 @@ public class LogFrame {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		System.out.println("get in");
 		EventQueue.invokeLater(new Runnable() {
 			
 			@Override
@@ -279,7 +282,7 @@ public class LogFrame {
 	    			cacheMap.put(KEY, nowTimeFileSize);
 		    		String tmp = null;
 		    		while ((tmp = randomFile.readLine()) != null) {
-		    			logTextArea.append(new String(tmp.getBytes("iso-8859-1"), "gbk"));
+		    			logTextArea.append(new String(tmp.getBytes("iso-8859-1"),Utils.DEFAULT_CHARSET));//.getBytes("iso-8859-1"), "gbk"
 		    			logTextArea.append("\n");
 		    		}
 	    		}

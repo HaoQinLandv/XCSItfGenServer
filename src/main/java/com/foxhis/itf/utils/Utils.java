@@ -15,6 +15,7 @@ import com.foxhis.itf.exception.NoHandlerDefException;
 public class Utils {
 
 	public static final String SERVER_LOGGER_NAME = "server.logger";
+	public static final String DEFAULT_CHARSET = "UTF-8";
 	/**
 	 * 判断字符串是否为空
 	 * @param str
