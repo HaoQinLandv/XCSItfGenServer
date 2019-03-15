@@ -26,6 +26,8 @@ import java.util.Date;
  * POJO
  *
  */
+
+
 public class Master_temp {
 	
 	private String roomno;
@@ -45,6 +47,17 @@ public class Master_temp {
 	private Date birth;
 	private String nationalityCode;
 	private String nationalityName;
+	
+    private String mobile;
+    private String lastName;
+    private String firstName;
+    private String ref1;
+    private String ref2;
+    private String ref3;
+    private String ref4;
+    private String ref5;
+    private String ref6;
+	
 	public String getRoomno() {
 		return roomno;
 	}
@@ -148,6 +161,63 @@ public class Master_temp {
 	public void setNationalityName(String nationalityName) {
 		this.nationalityName = nationalityName;
 	}
+	
+	public String getMobile() {
+		return mobile;
+	}
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getRef1() {
+		return ref1;
+	}
+	public void setRef1(String ref1) {
+		this.ref1 = ref1;
+	}
+	public String getRef2() {
+		return ref2;
+	}
+	public void setRef2(String ref2) {
+		this.ref2 = ref2;
+	}
+	public String getRef3() {
+		return ref3;
+	}
+	public void setRef3(String ref3) {
+		this.ref3 = ref3;
+	}
+	public String getRef4() {
+		return ref4;
+	}
+	public void setRef4(String ref4) {
+		this.ref4 = ref4;
+	}
+	public String getRef5() {
+		return ref5;
+	}
+	public void setRef5(String ref5) {
+		this.ref5 = ref5;
+	}
+	public String getRef6() {
+		return ref6;
+	}
+	public void setRef6(String ref6) {
+		this.ref6 = ref6;
+	}
+	
+	
 	@Override
 	public String toString() {
 		return "Master_temp [roomno=" + roomno + ", accnt=" + accnt + ", hno=" + hno + ", checkInTime=" + checkInTime
@@ -155,7 +225,9 @@ public class Master_temp {
 				+ ", guestName=" + guestName + ", guestTitle=" + guestTitle + ", idCardTypeCode=" + idCardTypeCode
 				+ ", idCardTypeName=" + idCardTypeName + ", guestId=" + guestId + ", genderCode=" + genderCode
 				+ ", genderName=" + genderName + ", birth=" + birth + ", nationalityCode=" + nationalityCode
-				+ ", nationalityName=" + nationalityName + "]";
+				+ ", nationalityName=" + nationalityName + ", mobile=" + mobile + ", lastName=" + lastName
+				+ ", firstName=" + firstName + ", ref1=" + ref1 + ", ref2=" + ref2 + ", ref3=" + ref3 + ", ref4=" + ref4
+				+ ", ref5=" + ref5 + ", ref6=" + ref6 + "]";
 	}
 	
 	

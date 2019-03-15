@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import com.foxhis.itf.dao.ICtrlRoomMapper;
 import com.foxhis.itf.entity.Internet_pms;
 import com.foxhis.itf.entity.Master_temp;
+import com.foxhis.itf.entity.Pms_building;
 import com.foxhis.itf.exception.NoHandlerDefException;
 import com.foxhis.itf.handler.ICtrlRoomHandler;
 import com.foxhis.itf.service.IGenCommon;
@@ -53,12 +54,12 @@ public class CtrlRoomGenernal implements IGenCommon{
 
 	public synchronized void doTask( )throws Exception
 	{
-		List<Internet_pms> internet_pmses = ctrlRoomMapper.getInternetPmsByTag("F");
-		LOGGER.info("获取internet_pms待推送数量："+internet_pmses.size());
-		for (Internet_pms internet_pms : internet_pmses) {
-			LOGGER.info(internet_pms.toString());
-			String accnt = internet_pms.getAccnt();
-			String tag = internet_pms.getTag();
+		List<Pms_building> pms_buildings = ctrlRoomMapper.getPmsBuildingByType("sta");
+		LOGGER.info("获取internet_pms待推送数量："+pms_buildings.size());
+		for (Pms_building pms_building : pms_buildings) {
+			LOGGER.info(pms_building.toString());
+			String accnt = pms_building.getAccnt();
+			String tag = pms_building.getTag();
 			Master_temp master_temp = ctrlRoomMapper.getMasterTempByAccnt(accnt);
 			LOGGER.info(master_temp.toString());
 			if(master_temp!=null && Utils.isNotBlank(master_temp.getRoomno()))
@@ -98,15 +99,15 @@ public class CtrlRoomGenernal implements IGenCommon{
 					if((Boolean)reMap.get("result"))
 					{
 						//成功
-						internet_pms.setChanged("T");
+						pms_building.setChanged("T");
 						
 					}
 					else {
 						//失败
-						internet_pms.setChanged("P");
+						pms_building.setChanged("P");
 					}
-					internet_pms.setSettime(new Date());
-					int k=ctrlRoomMapper.updateInternetPmsByTag(internet_pms);
+					pms_building.setSettime(new Date());
+					int k=ctrlRoomMapper.updatePmsBuildingByTag(pms_building);
 					String re = k>0? "成功" : "失败";
 					LOGGER.info("更新Internet_pms结果："+re);
 				}

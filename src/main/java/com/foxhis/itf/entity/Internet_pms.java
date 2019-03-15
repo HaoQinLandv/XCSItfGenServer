@@ -15,6 +15,7 @@ import java.util.Date;
  * @author Administrator
  *
  */
+@Deprecated
 public class Internet_pms {
 	
 	

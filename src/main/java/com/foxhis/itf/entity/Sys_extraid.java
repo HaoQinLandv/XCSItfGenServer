@@ -1,5 +1,10 @@
 package com.foxhis.itf.entity;
 
+import com.foxhis.itf.annotation.Table;
+import com.foxhis.itf.annotation.XcsEntity;
+
+@XcsEntity
+@Table(value = "sys_extraid")
 public class Sys_extraid {
 	private String cat;
 	private String descript;

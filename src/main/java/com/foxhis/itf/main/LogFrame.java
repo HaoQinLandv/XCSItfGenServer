@@ -41,13 +41,15 @@ public class LogFrame {
     private static final File logDir = new File(System.getProperty("user.dir")+"\\logs\\");
     //private static final File logFile = new File(System.getProperty("user.dir")+"\\logs\\foxerror.log");
     private static final String KEY = "lastTimeFileSize";
+    //申明扩展名
     private static final String[] extensions = {"log"};
     private boolean isMonitorStar;
+    //加并发锁
     private ReentrantLock lock = new ReentrantLock();
     
 
-	  /**
-     * 主窗口大小
+	 /**
+             * 主窗口大小
      */
     private final static int MAIN_WINDOW_X = 240;
     private final static int MAIN_WINDOW_Y = 100;
@@ -85,14 +87,8 @@ public class LogFrame {
 	private LogFrame() {
 		// TODO Auto-generated constructor stub
 		initialze();
-		initLog();
-		
-		
+		initLog();				
 	}
-	
-//	public  LogReader getLogReader() {
-//		return logReaderRunable;
-//	}
 	
 	public  JFrame getFrame() {
 		return frame;
@@ -102,8 +98,6 @@ public class LogFrame {
 	{
 		if(frame!=null)
 			frame.dispose();
-//		if(logReaderRunable!=null)
-//			logReaderRunable.setFlg(false);
 	}
 	
 
@@ -218,7 +212,7 @@ public class LogFrame {
 		FileFilterImpl filterImpl = new FileFilterImpl(extensions);
 		FileAlterationObserver logFileObserver=new FileAlterationObserver(logDir, filterImpl );
 		logFileObserver.addListener(new FileListener());
-		fileMonitor = new FileAlterationMonitor(3000, logFileObserver);
+		fileMonitor = new FileAlterationMonitor(100, logFileObserver);
 		//默认启动
 		logFileMonitorStart();
 		

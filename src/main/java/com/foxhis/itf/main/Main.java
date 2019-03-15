@@ -158,16 +158,6 @@ public class Main {
 		}
 		//加载托盘
 		addTray(popupMenu, MessageFormat.format("{0}接口服务器", SEVNAME), image);
-		
-		//		TrayIcon trayIcon = new TrayIcon(image, MessageFormat.format("{0}接口服务器", SEVNAME));
-		//		trayIcon.setPopupMenu(popupMenu);
-		
-		//		try {
-		//			SystemTray.getSystemTray().add(trayIcon);
-		//		} catch (AWTException e) {
-		//			LOGGER.error("系统不支持系统托盘");
-		//			System.exit(-1);
-		//		}
 
 	}
 
@@ -178,7 +168,9 @@ public class Main {
 	}
 	private static void trayLog()
 	{
-		if(!logFrame.isMonitorStar())logFrame.logFileMonitorStart();
+		if(!logFrame.isMonitorStar()) {
+			logFrame.logFileMonitorStart();
+		}
 		logFrame.getFrame().setVisible(true);
 	}
 	private static void trayExit()

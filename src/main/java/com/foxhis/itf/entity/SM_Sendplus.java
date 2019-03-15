@@ -1,5 +1,10 @@
 package com.foxhis.itf.entity;
 
+import com.foxhis.itf.annotation.Table;
+import com.foxhis.itf.annotation.XcsEntity;
+
+@XcsEntity
+@Table(value = "sm_sendplus")
 public class SM_Sendplus {
 	
 	
