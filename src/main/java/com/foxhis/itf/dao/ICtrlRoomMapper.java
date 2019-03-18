@@ -27,5 +27,7 @@ public interface ICtrlRoomMapper {
 	public List<Pms_building> getPmsBuildingByType(String type);
 	
 	public int updatePmsBuildingByTag(Pms_building pms);
+	
+	public List<Master_temp> getRmSta();
 
 }
