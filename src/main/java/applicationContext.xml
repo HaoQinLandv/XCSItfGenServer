@@ -51,8 +51,14 @@
     </bean>
     <bean class = "com.foxhis.itf.tasks.PoliceTask" />
     
-    
-    
+    <!-- <bean id = "ctrlroomserviceimpl" class = "com.foxhis.itf.rmiservice.CtrlRoomService"></bean> -->
+     <!-- 配置RMI -->
+    <bean class="org.springframework.remoting.rmi.RmiServiceExporter">  
+       <property name="serviceName" value="ctrlroomservice"></property>
+       <property name="service" ref="ctrlroomserviceimpl"></property>
+       <property name="serviceInterface" value="com.foxhis.itf.handler.ICtrlRoomHandler"></property>
+       <property name="registryPort" value="1199"></property>
+    </bean>  
     
     
     

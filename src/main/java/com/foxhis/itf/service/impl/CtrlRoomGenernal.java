@@ -11,17 +11,17 @@ import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
 import com.foxhis.itf.dao.ICtrlRoomMapper;
-import com.foxhis.itf.entity.Internet_pms;
 import com.foxhis.itf.entity.Master_temp;
 import com.foxhis.itf.entity.Pms_building;
 import com.foxhis.itf.exception.NoHandlerDefException;
 import com.foxhis.itf.handler.ICtrlRoomHandler;
+import com.foxhis.itf.handler.abstractimpl.AbstractCtrlRoomHandler;
 import com.foxhis.itf.service.IGenCommon;
 import com.foxhis.itf.utils.Utils;
 
 
 @Service("ctrlroom")
-public class CtrlRoomGenernal implements IGenCommon{
+public class CtrlRoomGenernal extends AbstractCtrlRoomHandler implements IGenCommon{
 
 	
 	private static final Logger LOGGER = Logger.getLogger(Utils.SERVER_LOGGER_NAME);

@@ -77,8 +77,8 @@
 			<version>1.3.0</version>
 		</dependency>
 		<dependency>
-			<groupId>com.foxhis.itf.ctrlroom</groupId>
-			<artifactId>CtrlRoomOstv</artifactId>
+			<groupId>com.foxhis.itf.ctrlroom.puietel</groupId>
+			<artifactId>CtrlRoom_Puietel</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
@@ -109,7 +109,7 @@
 				<configuration>
 					<source>1.6</source>
 					<target>1.6</target>
-					<encoding>UTF-8</encoding>  
+					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
 

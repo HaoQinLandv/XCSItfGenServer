@@ -29,5 +29,9 @@
 		accnt=#{accnt} and username=#{username}
 	</update>
 	
+	<!-- 调用sybase的存储过程 -->
+    <select id="getRmSta" statementType="CALLABLE"  resultType="Master_temp">    
+        <![CDATA[{call p_hxm_ctrlroom_allguest ()}]]>
+    </select>
 
 </mapper>
