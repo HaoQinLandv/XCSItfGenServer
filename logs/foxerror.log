@@ -753,3 +753,76 @@ java.lang.NullPointerException
 2019-03-18 15:31:46,719 [ INFO] com.foxhis.itf.rmiservice.CtrlRoomService.getMasters(CtrlRoomService.java:68) - Master_temp [roomno=0611 , accnt=F19C180009, hno=6000005   , checkInTime=Mon Mar 18 15:32:58 CST 2019, checkOutTime=Tue Mar 19 14:00:00 CST 2019, groupId=       , groupName=null, guestName=何蒙             , guestTitle=先生             , idCardTypeCode=C01              , idCardTypeName=null, guestId=43012419960410869, genderCode=1, genderName=男, birth=Wed Apr 10 00:00:00 CST 1996, nationalityCode=1 , nationalityName=null, mobile=15574344811         , lastName=何                  , firstName=蒙                  , ref1=null, ref2=null, ref3=null, ref4=null, ref5=null, ref6=null]
 2019-03-18 15:31:46,719 [ INFO] com.foxhis.itf.rmiservice.CtrlRoomService.getMasters(CtrlRoomService.java:68) - Master_temp [roomno=0608 , accnt=F19C150013, hno=6000110   , checkInTime=Fri Mar 15 14:53:54 CST 2019, checkOutTime=Sat Mar 16 14:50:44 CST 2019, groupId=       , groupName=null, guestName=胡凌炜           , guestTitle=先生             , idCardTypeCode=01               , idCardTypeName=身份证           , guestId=33252519890708191, genderCode=1, genderName=男, birth=Sat Jul 08 00:00:00 CDT 1989, nationalityCode=HA, nationalityName=汉族             , mobile=13606600631         , lastName=胡                  , firstName=凌炜                , ref1=null, ref2=null, ref3=null, ref4=null, ref5=null, ref6=null]
 2019-03-18 15:31:46,720 [ INFO] com.foxhis.itf.rmiservice.CtrlRoomService.getMasters(CtrlRoomService.java:68) - Master_temp [roomno=0609 , accnt=F19C150024, hno=6000110   , checkInTime=Fri Mar 15 14:55:34 CST 2019, checkOutTime=Sat Mar 16 14:52:15 CST 2019, groupId=       , groupName=null, guestName=胡凌炜           , guestTitle=先生             , idCardTypeCode=01               , idCardTypeName=身份证           , guestId=33252519890708191, genderCode=1, genderName=男, birth=Sat Jul 08 00:00:00 CDT 1989, nationalityCode=HA, nationalityName=汉族             , mobile=13606600631         , lastName=胡                  , firstName=凌炜                , ref1=null, ref2=null, ref3=null, ref4=null, ref5=null, ref6=null]
+2019-03-18 17:02:56,194 [ INFO] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@fb2c38: startup date [Mon Mar 18 17:02:56 CST 2019]; root of context hierarchy
+2019-03-18 17:02:56,378 [ INFO] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317) - Loading XML bean definitions from class path resource [applicationContext.xml]
+2019-03-18 17:02:57,516 [ INFO] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172) - Loading properties file from URL [file:F:/git/XCSItfGenServer/system.properties]
+2019-03-18 17:02:58,824 [ INFO] org.springframework.jdbc.datasource.DriverManagerDataSource.setDriverClassName(DriverManagerDataSource.java:133) - Loaded JDBC driver: net.sourceforge.jtds.jdbc.Driver
+2019-03-18 17:02:59,959 [ INFO] org.springframework.remoting.rmi.RmiServiceExporter.getRegistry(RmiServiceExporter.java:394) - Looking for RMI registry at port '1199'
+2019-03-18 17:03:01,785 [ INFO] org.springframework.remoting.rmi.RmiServiceExporter.getRegistry(RmiServiceExporter.java:405) - Could not detect RMI registry - creating new one
+2019-03-18 17:03:01,835 [ INFO] org.springframework.remoting.rmi.RmiServiceExporter.prepare(RmiServiceExporter.java:277) - Binding service 'ctrlroomservice' to RMI registry: RegistryImpl[UnicastServerRef [liveRef: [endpoint:[192.168.3.162:1199](local),objID:[0:0:0, 0]]]]
+2019-03-18 17:03:03,369 [ INFO] com.foxhis.itf.ctrlroom.puietel.utils.HttpServerUtils.start0(HttpServerUtils.java:43) - 启动httpserver
+2019-03-18 17:03:03,388 [ INFO] com.foxhis.itf.ctrlroom.puietel.CtrlRoom_Puietel.<init>(CtrlRoom_Puietel.java:43) - 配置参数为：url=http://ostv.2598.la:81/ostv-data-exchange/owkPmsHttpServlet
+2019-03-18 17:03:03,389 [ INFO] com.foxhis.itf.main.Main.main(Main.java:101) - 打开循环调度器成功,循环时间为:300秒
+2019-03-18 17:03:03,420 [ INFO] com.foxhis.itf.main.Main.main(Main.java:121) - 启动客控服务成功...
+2019-03-18 17:03:04,221 [ INFO] com.foxhis.itf.service.impl.CtrlRoomGenernal.doTask(CtrlRoomGenernal.java:58) - 获取internet_pms待推送数量：0
+2019-03-18 17:03:13,735 [ INFO] com.foxhis.itf.main.Main.trayExit(Main.java:182) - 服务已正常退出..
+2019-03-18 17:03:27,008 [ INFO] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@fb2c38: startup date [Mon Mar 18 17:03:27 CST 2019]; root of context hierarchy
+2019-03-18 17:03:27,076 [ INFO] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317) - Loading XML bean definitions from class path resource [applicationContext.xml]
+2019-03-18 17:03:27,696 [ INFO] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172) - Loading properties file from URL [file:F:/git/XCSItfGenServer/system.properties]
+2019-03-18 17:03:28,060 [ INFO] org.springframework.jdbc.datasource.DriverManagerDataSource.setDriverClassName(DriverManagerDataSource.java:133) - Loaded JDBC driver: net.sourceforge.jtds.jdbc.Driver
+2019-03-18 17:03:28,489 [ INFO] org.springframework.remoting.rmi.RmiServiceExporter.getRegistry(RmiServiceExporter.java:394) - Looking for RMI registry at port '1199'
+2019-03-18 17:03:30,200 [ INFO] org.springframework.remoting.rmi.RmiServiceExporter.getRegistry(RmiServiceExporter.java:405) - Could not detect RMI registry - creating new one
+2019-03-18 17:03:30,247 [ INFO] org.springframework.remoting.rmi.RmiServiceExporter.prepare(RmiServiceExporter.java:277) - Binding service 'ctrlroomservice' to RMI registry: RegistryImpl[UnicastServerRef [liveRef: [endpoint:[192.168.3.162:1199](local),objID:[0:0:0, 0]]]]
+2019-03-18 17:03:31,107 [ INFO] com.foxhis.itf.ctrlroom.puietel.utils.HttpServerUtils.start0(HttpServerUtils.java:43) - 启动httpserver
+2019-03-18 17:03:31,133 [ERROR] com.foxhis.itf.ctrlroom.puietel.utils.PropertiesFileCopyUtils.iniProfile(PropertiesFileCopyUtils.java:40) - 无法创建客控配置[ctrlroom.properties]，请联系系统管理员
+java.lang.NullPointerException
+	at org.apache.commons.io.IOUtils.copyLarge(IOUtils.java:1792)
+	at org.apache.commons.io.IOUtils.copyLarge(IOUtils.java:1769)
+	at org.apache.commons.io.IOUtils.copy(IOUtils.java:1744)
+	at org.apache.commons.io.FileUtils.copyInputStreamToFile(FileUtils.java:1512)
+	at com.foxhis.itf.ctrlroom.puietel.utils.PropertiesFileCopyUtils.iniProfile(PropertiesFileCopyUtils.java:37)
+	at com.foxhis.itf.ctrlroom.puietel.CtrlRoom_Puietel.<clinit>(CtrlRoom_Puietel.java:34)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at java.lang.Class.newInstance(Class.java:442)
+	at java.util.ServiceLoader$LazyIterator.nextService(ServiceLoader.java:380)
+	at java.util.ServiceLoader$LazyIterator.next(ServiceLoader.java:404)
+	at java.util.ServiceLoader$1.next(ServiceLoader.java:480)
+	at com.foxhis.itf.utils.Utils.getItfInstance(Utils.java:116)
+	at com.foxhis.itf.service.impl.CtrlRoomGenernal.initialize(CtrlRoomGenernal.java:37)
+	at com.foxhis.itf.main.Main.main(Main.java:99)
+2019-03-18 17:03:31,134 [ERROR] com.foxhis.itf.ctrlroom.puietel.CtrlRoom_Puietel.checkPropertiesNotEmtry(CtrlRoom_Puietel.java:49) - 客控配置参数不能为空
+2019-03-18 17:04:31,125 [ INFO] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@fb2c38: startup date [Mon Mar 18 17:04:31 CST 2019]; root of context hierarchy
+2019-03-18 17:04:31,207 [ INFO] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317) - Loading XML bean definitions from class path resource [applicationContext.xml]
+2019-03-18 17:04:31,776 [ INFO] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172) - Loading properties file from URL [file:F:/git/XCSItfGenServer/system.properties]
+2019-03-18 17:04:32,159 [ INFO] org.springframework.jdbc.datasource.DriverManagerDataSource.setDriverClassName(DriverManagerDataSource.java:133) - Loaded JDBC driver: net.sourceforge.jtds.jdbc.Driver
+2019-03-18 17:04:32,564 [ INFO] org.springframework.remoting.rmi.RmiServiceExporter.getRegistry(RmiServiceExporter.java:394) - Looking for RMI registry at port '1199'
+2019-03-18 17:04:34,247 [ INFO] org.springframework.remoting.rmi.RmiServiceExporter.getRegistry(RmiServiceExporter.java:405) - Could not detect RMI registry - creating new one
+2019-03-18 17:04:34,282 [ INFO] org.springframework.remoting.rmi.RmiServiceExporter.prepare(RmiServiceExporter.java:277) - Binding service 'ctrlroomservice' to RMI registry: RegistryImpl[UnicastServerRef [liveRef: [endpoint:[192.168.3.162:1199](local),objID:[0:0:0, 0]]]]
+2019-03-18 17:04:35,125 [ INFO] com.foxhis.itf.ctrlroom.puietel.utils.HttpServerUtils.start0(HttpServerUtils.java:43) - 启动httpserver
+2019-03-18 17:04:35,126 [ INFO] com.foxhis.itf.ctrlroom.puietel.CtrlRoom_Puietel.<init>(CtrlRoom_Puietel.java:43) - 配置参数为：url=null
+2019-03-18 17:04:35,127 [ INFO] com.foxhis.itf.main.Main.main(Main.java:101) - 打开循环调度器成功,循环时间为:300秒
+2019-03-18 17:04:35,141 [ INFO] com.foxhis.itf.main.Main.main(Main.java:121) - 启动客控服务成功...
+2019-03-18 17:04:35,264 [ INFO] com.foxhis.itf.service.impl.CtrlRoomGenernal.doTask(CtrlRoomGenernal.java:58) - 获取internet_pms待推送数量：0
+2019-03-18 17:06:57,400 [ INFO] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@fb2c38: startup date [Mon Mar 18 17:06:57 CST 2019]; root of context hierarchy
+2019-03-18 17:06:57,521 [ INFO] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317) - Loading XML bean definitions from class path resource [applicationContext.xml]
+2019-03-18 17:06:58,040 [ INFO] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172) - Loading properties file from URL [file:F:/git/XCSItfGenServer/system.properties]
+2019-03-18 17:06:58,407 [ INFO] org.springframework.jdbc.datasource.DriverManagerDataSource.setDriverClassName(DriverManagerDataSource.java:133) - Loaded JDBC driver: net.sourceforge.jtds.jdbc.Driver
+2019-03-18 17:06:58,833 [ INFO] org.springframework.remoting.rmi.RmiServiceExporter.getRegistry(RmiServiceExporter.java:394) - Looking for RMI registry at port '1199'
+2019-03-18 17:07:00,595 [ INFO] org.springframework.remoting.rmi.RmiServiceExporter.getRegistry(RmiServiceExporter.java:405) - Could not detect RMI registry - creating new one
+2019-03-18 17:07:00,637 [ INFO] org.springframework.remoting.rmi.RmiServiceExporter.prepare(RmiServiceExporter.java:277) - Binding service 'ctrlroomservice' to RMI registry: RegistryImpl[UnicastServerRef [liveRef: [endpoint:[192.168.3.162:1199](local),objID:[0:0:0, 0]]]]
+2019-03-18 17:07:01,479 [ INFO] com.foxhis.itf.ctrlroom.puietel.utils.HttpServerUtils.start0(HttpServerUtils.java:43) - 启动httpserver
+2019-03-18 17:07:01,480 [ INFO] com.foxhis.itf.ctrlroom.puietel.CtrlRoom_Puietel.<init>(CtrlRoom_Puietel.java:43) - 配置参数为：url=null
+2019-03-18 17:07:01,481 [ INFO] com.foxhis.itf.main.Main.main(Main.java:101) - 打开循环调度器成功,循环时间为:300秒
+2019-03-18 17:07:01,496 [ INFO] com.foxhis.itf.main.Main.main(Main.java:121) - 启动客控服务成功...
+2019-03-18 17:07:01,603 [ INFO] com.foxhis.itf.service.impl.CtrlRoomGenernal.doTask(CtrlRoomGenernal.java:58) - 获取internet_pms待推送数量：0
+2019-03-18 17:08:02,192 [ INFO] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@8f5957: startup date [Mon Mar 18 17:08:02 CST 2019]; root of context hierarchy
+2019-03-18 17:08:02,350 [ INFO] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317) - Loading XML bean definitions from class path resource [applicationContext.xml]
+2019-03-18 17:08:02,929 [ INFO] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172) - Loading properties file from URL [file:F:/git/XCSItfGenServer/system.properties]
+2019-03-18 17:08:03,577 [ INFO] org.springframework.jdbc.datasource.DriverManagerDataSource.setDriverClassName(DriverManagerDataSource.java:133) - Loaded JDBC driver: net.sourceforge.jtds.jdbc.Driver
+2019-03-18 17:08:04,702 [ INFO] org.springframework.remoting.rmi.RmiServiceExporter.getRegistry(RmiServiceExporter.java:394) - Looking for RMI registry at port '1199'
+2019-03-18 17:08:06,556 [ INFO] org.springframework.remoting.rmi.RmiServiceExporter.getRegistry(RmiServiceExporter.java:405) - Could not detect RMI registry - creating new one
+2019-03-18 17:08:06,693 [ INFO] org.springframework.remoting.rmi.RmiServiceExporter.prepare(RmiServiceExporter.java:277) - Binding service 'ctrlroomservice' to RMI registry: RegistryImpl[UnicastServerRef [liveRef: [endpoint:[192.168.3.162:1199](local),objID:[0:0:0, 0]]]]
+2019-03-18 17:08:49,427 [ INFO] com.foxhis.itf.ctrlroom.puietel.utils.HttpServerUtils.start0(HttpServerUtils.java:43) - 启动httpserver

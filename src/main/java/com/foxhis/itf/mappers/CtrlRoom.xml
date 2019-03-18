@@ -21,12 +21,12 @@
 	
 	
 	<select id="getPmsBuildingByType" parameterType="String" resultType="Pms_building">
-		select * from internet_pms where changed=#{0}
+		select * from pms_building where changed='F' and type=#{0}
 	</select>
 
     <update id="updatePmsBuildingByTag" parameterType="Pms_building">
-		update internet_pms set changed=#{changed},settime=#{settime} where
-		accnt=#{accnt} and username=#{username}
+		update pms_building set changed=#{changed},settime=#{settime} where
+		accnt=#{accnt} and roomno=#{roomno}
 	</update>
 	
 	<!-- 调用sybase的存储过程 -->

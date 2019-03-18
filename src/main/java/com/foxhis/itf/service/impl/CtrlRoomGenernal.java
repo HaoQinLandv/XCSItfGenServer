@@ -55,15 +55,15 @@ public class CtrlRoomGenernal extends AbstractCtrlRoomHandler implements IGenCom
 	public synchronized void doTask( )throws Exception
 	{
 		List<Pms_building> pms_buildings = ctrlRoomMapper.getPmsBuildingByType("sta");
-		LOGGER.info("获取internet_pms待推送数量："+pms_buildings.size());
+		LOGGER.info("获取Pms_building待推送数量："+pms_buildings.size());
 		for (Pms_building pms_building : pms_buildings) {
 			LOGGER.info(pms_building.toString());
 			String accnt = pms_building.getAccnt();
 			String tag = pms_building.getTag();
 			Master_temp master_temp = ctrlRoomMapper.getMasterTempByAccnt(accnt);
-			LOGGER.info(master_temp.toString());
 			if(master_temp!=null && Utils.isNotBlank(master_temp.getRoomno()))
 			{
+				LOGGER.info(master_temp.toString());
 				Map<String, Object> input = new HashMap<String, Object>();
 				input.put("roomno", master_temp.getRoomno());
 				input.put("accnt", master_temp.getAccnt());
@@ -121,6 +121,9 @@ public class CtrlRoomGenernal extends AbstractCtrlRoomHandler implements IGenCom
 					LOGGER.info("更新Internet_pms结果："+re);
 				}
 			
+			}
+			else {
+				LOGGER.info(accnt+">>master_temp无关联pms_building的accnt记录");
 			}
 		}
 	}
