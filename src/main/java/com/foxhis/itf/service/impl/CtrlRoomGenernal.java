@@ -82,6 +82,15 @@ public class CtrlRoomGenernal extends AbstractCtrlRoomHandler implements IGenCom
 				input.put("birth", master_temp.getBirth());
 				input.put("nationalitycode", master_temp.getNationalityCode());
 				input.put("nationalityname", master_temp.getNationalityName());
+				input.put("ref1", master_temp.getRef1());
+				input.put("ref2", master_temp.getRef2());
+				input.put("ref3", master_temp.getRef3());
+				input.put("ref4", master_temp.getRef4());
+				input.put("ref5", master_temp.getRef5());
+				input.put("ref6", master_temp.getRef6());
+				input.put("firstName", master_temp.getFirstName());
+				input.put("lastName", master_temp.getLastName());
+				input.put("mobile", master_temp.getMobile());
 				Map<String, Object> reMap = new HashMap<String, Object>();
 				if(ckin.equals(tag))
 				{
