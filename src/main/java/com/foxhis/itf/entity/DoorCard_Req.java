@@ -2,9 +2,11 @@ package com.foxhis.itf.entity;
 
 import java.util.Date;
 
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.IOUtils;
+import com.foxhis.itf.annotation.Table;
+import com.foxhis.itf.annotation.XcsEntity;
 
+@XcsEntity
+@Table("doorcard_req")
 public class DoorCard_Req {
 	
 	private long id;

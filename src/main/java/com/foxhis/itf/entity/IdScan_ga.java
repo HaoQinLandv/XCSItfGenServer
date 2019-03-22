@@ -2,6 +2,9 @@ package com.foxhis.itf.entity;
 
 import java.util.Date;
 
+import com.foxhis.itf.annotation.Table;
+import com.foxhis.itf.annotation.XcsEntity;
+
 /**
  *   id	char(20)	null,
 	 roomno	varchar(5)	null,
@@ -36,6 +39,10 @@ import java.util.Date;
  * @author tq
  *
  */
+
+
+@XcsEntity
+@Table("idscan_ga")
 public class IdScan_ga {
 	
 	private String id;

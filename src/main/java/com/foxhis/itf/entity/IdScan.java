@@ -2,11 +2,16 @@ package com.foxhis.itf.entity;
 
 import java.util.Date;
 
+import com.foxhis.itf.annotation.Table;
+import com.foxhis.itf.annotation.XcsEntity;
+
 /**
  * 对应sybase的idscan表结构
  * @author tq
  *
  */
+@XcsEntity
+@Table("idscan")
 public class IdScan {
 	
 	private String no;

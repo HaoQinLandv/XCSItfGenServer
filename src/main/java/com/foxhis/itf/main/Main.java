@@ -84,7 +84,7 @@ public class Main {
 			LOGGER.error("加载配置文件失败", e);
 			System.exit(-1);
 		}
-		scheduledpools = Executors.newScheduledThreadPool(1);
+		scheduledpools = Executors.newScheduledThreadPool(5);
 		// 轮询时长
 		String runtime = properties.getProperty("time");
 		// 接口类型句柄

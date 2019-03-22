@@ -2,6 +2,9 @@ package com.foxhis.itf.entity;
 
 import java.util.Date;
 
+import com.foxhis.itf.annotation.Table;
+import com.foxhis.itf.annotation.XcsEntity;
+
 /**
  * 
  roomno	char(5)		 null,
@@ -27,7 +30,8 @@ import java.util.Date;
  *
  */
 
-
+@XcsEntity
+@Table("master_temp")
 public class Master_temp {
 	
 	private String roomno;

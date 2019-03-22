@@ -29,7 +29,7 @@ import org.springframework.stereotype.Component;
 
 import com.foxhis.itf.utils.Utils;
 
-@Component("logframe")
+//@Component("logframe")
 public class LogFrame {
 
 	private JFrame frame;
@@ -317,7 +317,11 @@ public class LogFrame {
 		
 	}
 
-    
+    /**
+     * 筛选显示的文件后缀名
+     * @author Administrator
+     *
+     */
 	class FileFilterImpl  implements FileFilter{
 
 		private String[] extensions;

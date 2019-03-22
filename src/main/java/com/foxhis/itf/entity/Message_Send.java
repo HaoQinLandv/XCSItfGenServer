@@ -2,11 +2,16 @@ package com.foxhis.itf.entity;
 
 import java.util.Date;
 
+import com.foxhis.itf.annotation.Table;
+import com.foxhis.itf.annotation.XcsEntity;
+
 /**
  * message_send模型
  * @author tq
  *
  */
+@XcsEntity
+@Table("message_send")
 public class Message_Send {
 
 	private int sendid;
